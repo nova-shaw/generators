@@ -1,4 +1,4 @@
-const fp_adventure = [
+export const fp_adventure = [
 { word: 'fox', lastused: '2025-02-01' },
 { word: 'hen', lastused: '2025-02-06' },
 { word: 'hat', lastused: '2025-02-09' },

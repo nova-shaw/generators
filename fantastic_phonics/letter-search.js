@@ -1,141 +1,143 @@
-abg-bag-bat-kt  abg bag / bat k, t  bag bat 2023-05-30  little a is n
-fin-fin-fig-gh  fin fin / fig g, h  fin fig 2024-01-18  UPDATED 2024-01-15 as incorrect video
-acp-cap-can-ln  acp cap / can l, n  cap can 2024-08-08  letter order is wrong
-acn-can-van-vz  acn can / van v, z  can van 2024-08-19  
-egl-leg-peg-hp  egl leg / peg h, p  leg peg 2024-09-16  
-etv-vet-net-nt  etv vet / net n, t  vet net 2024-09-18  
-btu-tub-cub-cs  btu tub / cub c, s  tub cub 2024-09-20  
-ads-sad-dad-sd  ads sad / dad s, d  sad dad 2024-09-23  
-abt-bat-bag-gz  abt bat / bag g, z  bat bag 2024-09-24  
-art-rat-mat-mn  art rat / mat m, n  rat mat 2024-09-25  
-opt-top-hop-hq  opt top / hop h, q  top hop 2024-09-27  
-dik-kid-lid-fl  dik kid / lid f, l  kid lid 2024-09-28  
-bew-web-wet-tx  bew web / wet t, x  web wet 2024-09-30  
-opt-top-tap-ai  opt top / tap a, i  top tap 2024-10-01  
-dot-dot-dog-dg  dot dot / dog d, g  dot dog 2024-10-03  
-ajm-jam-ham-hn  ajm jam / ham h, n  jam ham 2024-10-04  
-ent-ten-pen-jp  ent ten / pen j, p  ten pen 2024-10-05  
-bgu-bug-hug-hy  bgu bug / hug h, y  bug hug 2024-10-07  
-dgo-dog-log-kl  dgo dog / log k, l  dog log 2024-10-08  
-bdu-bud-bus-sz  bdu bud / bus s, z  bud bus 2024-10-10  
-ekl-elk-elf-fk  ekl elk / elf f, k  elk elf 2024-10-11  
-amr-ham-ram-hl  amr ham / ram h, l  ham ram 2024-10-13  
-der-red-rod-ao  der red / rod a, o  red rod 2024-10-14  
-igw-wig-pig-bp  giw wig / pig b, p  wig pig 2024-10-15  
-inp-pin-pen-ae  inp pin / pen a, e  pin pen 2024-10-17  
-inw-pin-win-bp  inw pin / win b, p  pin win 2024-10-18  
-act-cat-mat-wm  act cat / mat w, m  cat mat 2024-10-20  
-fox-fox-box-bc  fox fox / box b, c  fox box 2024-10-21  
-der-red-bed-bg  der red / bed b, g  red bed 2024-10-23  
-ent-ten-pen-dp  ent ten / pen d, p  ten pen 2024-10-24  
-apt-tap-cap-cw  apt tap / cap c, w  tap cap 2024-10-26  
-cpu-cup-cap-ai  cpu cup / cap a, i  cup cap 2024-10-27  
-bgi-pig-big-gp  bgi pig / big g, p  pig big 2024-10-29  
-dno-nod-rod-rw  dno nod / rod r, w  nod rod 2024-10-30  
-alp-lap-cap-ch  alp lap / cap c, h  lap cap 2024-11-01  
-aky-yak-yam-mn  aky yak / yam m, n  yak yam 2024-11-02  
-fgi-fig-wig-mw  fgi fig / wig m, w  fig wig 2024-11-04  
-nsu-sun-run-pr  nsu sun / run p, r  sun run 2024-11-05  
-acn-can-cat-tx  acn can / cat t, x  can cat 2024-11-07  
-bde-bed-bud-iu  bde bed / bud i, u  bed bud 2024-11-08  
-ajm-jam-ram-kr  ajm jam / ram k, r  jam ram 2024-11-10  
-acp-cap-cup-ou  acp cap / cup o, u  cap cup 2024-11-11  
-bcu-cub-cup-kp  bcu cub / cup k, p  cub cup 2024-11-12  
-isx-six-mix-mw  isx six / mix m, w  six mix 2024-11-14  
-gmu-gum-hum-fh  gmu gum / hum f, h  gum hum 2024-11-15  
-afn-fan-fat-tv  afn fan / fat t, v  fan fat 2024-11-17  
-bsu-bus-bug-gp  bsu bus / bug g, p  bus bug 2024-11-18  
-ctu-cut-cup-gp  ctu cut / cup g, p  cut cup 2024-11-20  
-enp-pen-ten-qt  enp pen / ten q, t  pen ten 2024-11-21  
-bnu-bun-fun-fk  bnu bun / fun f, k  bun fun 2024-11-22  
-bde-bed-red-lr  bde bed / red l, r  bed red 2024-11-24  
-amn-man-men-eo  amn man / men e, o  man men 2024-11-25  
-asx-sax-taxi-qx asx sax / taxi  q, x  sax taxi  2024-11-27  
-dmu-mud-bud-bf  dmu mud / bud b, f  mud bud 2024-11-28  
-mop-mop-top-ft  mop mop / top f, t  mop top 2024-11-30  
-ehn-hen-ten-ft  ehn hen / ten f, t  hen ten 2024-12-01  
-dop-pod-rod-rs  dop pod / rod r, s  pod rod 2024-12-03  
-anp-pan-can-cw-2  anp pan / can c, w  pan can 2024-12-04  
-gip-pig-big-bq  gip pig / big b, q  pig big 2024-12-06  
-apt-tap-nap-nw  apt tap / nap n, w  tap nap 2024-12-07  
-fgi-fig-fin-nw  fig fig / fin n, w  fig fin 2024-12-09  Renamed from (fin-fin-fig-nw)
-dgo-dog-dot-ft  dgo dog / dot f, t  dog dot 2024-12-10  
-fin-fin-fan-ao  fin fin / fan a, o  fin fan 2024-12-12  
-bew-web-wet-ht  bew web / wet h, t  web wet 2024-12-13  
-ent-net-nut-nu  ent net / nut n, u  net nut 2024-12-15  
-gmu-gum-hum-fh-2  gmu gum / hum f, h  gum hum 2024-12-16  
-art-rat-hat-hw  art rat / hat h, w  rat hat 2024-12-18  
-bsu-bus-bud-dt  bsu bus / bud d, t  bus bud 2024-12-19  
-dmu-mud-bud-dk  dmu mud / bud d, k  mud bud 2024-12-20  
-ist-sit-hit-hy  ist sit / hit h, y  sit hit 2024-12-22  
-fin-fin-win-wz  fin fin / win w, z  fin win 2024-12-23  
-amn-man-van-vw  amn man / van v, w  man van 2024-12-25  
-dil-lid-kid-kz  dil lid / kid k, z  lid kid 2024-12-26  
-opt-top-hop-hk  opt top / hop h, k  top hop 2024-12-28  
-cgo-cog-cot-tw  cgo cog / cot t, w  cog cot 2025-01-04  
-fnu-fun-run-lr  fnu fun / run l, r  fun run 2025-01-06  
-der-red-bed-bn  der red / bed b, n  red bed 2025-01-07  
-act-cat-rat-cr  act cat / rat c, r  cat rat 2025-01-08  
-anv-van-pan-dp  anv van / pan d, p  van pan 2025-01-10  
-fgo-fog-fig-iu  fgo fog / fig i, u  fog fig 2025-01-11  
-alp-lap-map-mx  alp lap / map m, x  lap map 2025-01-13  
-abt-bat-rat-qr  abt bat / rat q, r  bat rat 2025-01-14  
-amp-map-mop-eo  amp map / mop e, o  map mop 2025-01-15  
-gmu-gum-sum-js  gmu gum / sum j, s  gum sum 2025-01-16  
-alp-lap-tap-ty  alp lap / tap t, y  lap tap 2025-01-18  
-ahm-ham-yam-wy  ahm ham / yam w, y  ham yam 2025-01-19  
-dot-dot-pot-pq  dot dot / pot p, q  dot pot 2025-01-21  
-egl-leg-log-io  egl leg / log i, o  leg log 2025-01-22  
-act-cat-hat-th  act cat / hat t, h  cat hat 2025-01-23  
-dgi-dig-big-bq  dgi dig / big b, q  dig big 2025-01-25  
-btu-tub-cub-cv  btu tub / cub c, v  tub cub 2025-01-26  
-aht-hat-hot-eo  aht hat / hot e, o  hat hot 2025-01-27  
-agt-tag-bag-bl  agt tag / bag b, l  tag bag 2025-01-29  
-dgo-dog-log-lr  dgo dog / log l, r  dog log 2025-01-30  
-dot-dot-dog-gm  dot dot / dog g, m  dot dog 2025-01-31  
-ent-ten-hen-bh  ent ten / hen b, h  ten hen 2025-02-02  
-bsu-bus-bug-gp-2  bsu bus / bug g, p  bus bug 2025-02-04  
-egl-leg-peg-pr  egl leg / peg p, r  leg peg 2025-02-05  
-nsu-sun-run-jr  nsu sun / run j, r  sun run 2025-02-07  
-dik-kid-kit-gt  dik kid / kit g, t  kid kit 2025-02-08  
-dot-dot-hot-bh  dot dot / hot b, h  dot hot 2025-02-10  
-isx-six-mix-jm  isx six / mix j, m  six mix 2025-02-11  
-apc-cap-cup-ai  apc cap / cup a, i  cap cup 2025-02-12  
-dno-nod-rod-pr  dno nod / rod p, r  nod rod 2025-02-13  
-ikt-kit-hit-hl  ikt kit / hit h, l  kit hit 2025-02-15  
-ikt-kit-sit-ds  ikt kit / sit d, s  kit sit 2025-02-16  
-bgu-bug-bud-dx  bgu bug / bud d, x  bug bud 2025-02-17  
-fox-fox-box-fm  fox fox / box f, m  fox box 2025-02-19  FM video does not exist!!
-gip-pig-dig-dg  gip pig / dig d, g  pig dig 2025-02-21  
-ads-sad-bad-bd  ads sad / bad b, d  sad bad 2025-02-22  
-anp-pan-can-cw  anp pan / can c, w  pan can 2025-02-23  
-fin-fin-pin-pq  fin fin / pin p, q  fin pin 2025-02-25  
-amt-mat-map-kp  amt mat / map k, p  mat map 2025-02-26  
-ags-gas-gap-np  ags gas / gap n, p  gas gap 2025-02-28  
-anv-van-pan-bp  anv van / pan b, p  van pan 2025-03-01  
-ntu-nut-cut-cf  ntu nut / cut c, f  nut cut 2025-03-03  
-art-rat-ram-mn  art rat / ram m, n  rat ram 2025-03-04  
-ads-sad-dad-dq  ads sad / dad d, q  sad dad 2025-03-05  
-dop-pod-pot-ft  dop pod / pot f, t  pod pot 2025-03-07  
-nsu-sun-run-mr  nsu sun / run m, r  sun run 2025-03-08  
-ntu-nut-nun-dn  ntu nut / nun d, n  nut nun 2025-03-09  
-ghu-hug-bug-bd  ghu hug / bug b, d  hug bug 2025-03-11  
-apt-pat-hat-hz  apt pat / hat h, z  pat hat 2025-03-12  
-ekl-elk-elf-fk-2  ekl elk / elf f, k  elk elf 2025-03-13  
-hot-hot-hop-pt  hot hot / hop p, t  hot hop 2025-03-15  
-act-cat-cut-uy  act cat / cut u, y  cat cut 2025-03-16  
-ads-sad-dad-dp  ads sad / dad d, p  sad dad 2025-03-17  
-ilp-lip-pip-bp  ilp lip / pip b, p  lip pip 2025-03-19  
-fin-fin-fig-gh  fin fin / fig g, h  fin fig 2025-03-20  
-gmu-gum-sum-sv  gmu gum / sum s, v  gum sum 2025-03-21  
-anp-nap-cap-cs  anp nap / cap c, s  nap cap 2025-03-23  
-awx-wax-wag-gt  awx wax / wag g, t  wax wag 2025-03-24  
-inp-pin-win-vw  inp pin / win v, w  pin win 2025-03-25  
-nsu-sun-bun-bl  nsu sun / bun b, l  sun bun 2025-03-27  
-cgo-cog-fog-fy  cgo cog / fog f, y  cog fog 2025-03-29  
-opt-pot-pet-eu  opt pot / pet e, u  pot pet 2025-03-30  
-isx-six-sit-gt  isx six / sit g, t  six sit 2025-04-01  
-dgi-dig-wig-wx  dgi dig / wig w, x  dig wig 2025-04-02  
-dor-rod-red-ae  dor rod / red a, e  rod red 2025-04-04  
-opt-top-mop-mn  opt top / mop m, n  top mop 2025-04-05  
-aht-hat-rat-rz  aht hat / rat r, z  hat rat 2025-04-07  
+export const letter_search = [
+  { word: 'bag', letters: ['a','b','g'], quiz: { letters: ['k','t'], word: 'bat' },  video: 'abg-bag-bat-kt',   lastused: '2023-05-30' },  // little a is n
+  { word: 'fin', letters: ['f','i','n'], quiz: { letters: ['g','h'], word: 'fig' },  video: 'fin-fin-fig-gh',   lastused: '2024-01-18' },  // UPDATED 2024-01-15, as incorrect video
+  { word: 'cap', letters: ['a','c','p'], quiz: { letters: ['l','n'], word: 'can' },  video: 'acp-cap-can-ln',   lastused: '2024-08-08' },  // letter order is wrong
+  { word: 'can', letters: ['a','c','n'], quiz: { letters: ['v','z'], word: 'van' },  video: 'acn-can-van-vz',   lastused: '2024-08-19' },  
+  { word: 'leg', letters: ['e','g','l'], quiz: { letters: ['h','p'], word: 'peg' },  video: 'egl-leg-peg-hp',   lastused: '2024-09-16' },  
+  { word: 'vet', letters: ['e','t','v'], quiz: { letters: ['n','t'], word: 'net' },  video: 'etv-vet-net-nt',   lastused: '2024-09-18' },  
+  { word: 'tub', letters: ['b','t','u'], quiz: { letters: ['c','s'], word: 'cub' },  video: 'btu-tub-cub-cs',   lastused: '2024-09-20' },  
+  { word: 'sad', letters: ['a','d','s'], quiz: { letters: ['s','d'], word: 'dad' },  video: 'ads-sad-dad-sd',   lastused: '2024-09-23' },  
+  { word: 'bat', letters: ['a','b','t'], quiz: { letters: ['g','z'], word: 'bag' },  video: 'abt-bat-bag-gz',   lastused: '2024-09-24' },  
+  { word: 'rat', letters: ['a','r','t'], quiz: { letters: ['m','n'], word: 'mat' },  video: 'art-rat-mat-mn',   lastused: '2024-09-25' },  
+  { word: 'top', letters: ['o','p','t'], quiz: { letters: ['h','q'], word: 'hop' },  video: 'opt-top-hop-hq',   lastused: '2024-09-27' },  
+  { word: 'kid', letters: ['d','i','k'], quiz: { letters: ['f','l'], word: 'lid' },  video: 'dik-kid-lid-fl',   lastused: '2024-09-28' },  
+  { word: 'web', letters: ['b','e','w'], quiz: { letters: ['t','x'], word: 'wet' },  video: 'bew-web-wet-tx',   lastused: '2024-09-30' },  
+  { word: 'top', letters: ['o','p','t'], quiz: { letters: ['a','i'], word: 'tap' },  video: 'opt-top-tap-ai',   lastused: '2024-10-01' },  
+  { word: 'dot', letters: ['d','o','t'], quiz: { letters: ['d','g'], word: 'dog' },  video: 'dot-dot-dog-dg',   lastused: '2024-10-03' },  
+  { word: 'jam', letters: ['a','j','m'], quiz: { letters: ['h','n'], word: 'ham' },  video: 'ajm-jam-ham-hn',   lastused: '2024-10-04' },  
+  { word: 'ten', letters: ['e','n','t'], quiz: { letters: ['j','p'], word: 'pen' },  video: 'ent-ten-pen-jp',   lastused: '2024-10-05' },  
+  { word: 'bug', letters: ['b','g','u'], quiz: { letters: ['h','y'], word: 'hug' },  video: 'bgu-bug-hug-hy',   lastused: '2024-10-07' },  
+  { word: 'dog', letters: ['d','g','o'], quiz: { letters: ['k','l'], word: 'log' },  video: 'dgo-dog-log-kl',   lastused: '2024-10-08' },  
+  { word: 'bud', letters: ['b','d','u'], quiz: { letters: ['s','z'], word: 'bus' },  video: 'bdu-bud-bus-sz',   lastused: '2024-10-10' },  
+  { word: 'elk', letters: ['e','k','l'], quiz: { letters: ['f','k'], word: 'elf' },  video: 'ekl-elk-elf-fk',   lastused: '2024-10-11' },  
+  { word: 'ham', letters: ['a','m','r'], quiz: { letters: ['h','l'], word: 'ram' },  video: 'amr-ham-ram-hl',   lastused: '2024-10-13' },  
+  { word: 'red', letters: ['d','e','r'], quiz: { letters: ['a','o'], word: 'rod' },  video: 'der-red-rod-ao',   lastused: '2024-10-14' },  
+  { word: 'wig', letters: ['g','i','w'], quiz: { letters: ['b','p'], word: 'pig' },  video: 'igw-wig-pig-bp',   lastused: '2024-10-15' },  
+  { word: 'pin', letters: ['i','n','p'], quiz: { letters: ['a','e'], word: 'pen' },  video: 'inp-pin-pen-ae',   lastused: '2024-10-17' },  
+  { word: 'pin', letters: ['i','n','w'], quiz: { letters: ['b','p'], word: 'win' },  video: 'inw-pin-win-bp',   lastused: '2024-10-18' },  
+  { word: 'cat', letters: ['a','c','t'], quiz: { letters: ['w','m'], word: 'mat' },  video: 'act-cat-mat-wm',   lastused: '2024-10-20' },  
+  { word: 'fox', letters: ['f','o','x'], quiz: { letters: ['b','c'], word: 'box' },  video: 'fox-fox-box-bc',   lastused: '2024-10-21' },  
+  { word: 'red', letters: ['d','e','r'], quiz: { letters: ['b','g'], word: 'bed' },  video: 'der-red-bed-bg',   lastused: '2024-10-23' },  
+  { word: 'ten', letters: ['e','n','t'], quiz: { letters: ['d','p'], word: 'pen' },  video: 'ent-ten-pen-dp',   lastused: '2024-10-24' },  
+  { word: 'tap', letters: ['a','p','t'], quiz: { letters: ['c','w'], word: 'cap' },  video: 'apt-tap-cap-cw',   lastused: '2024-10-26' },  
+  { word: 'cup', letters: ['c','p','u'], quiz: { letters: ['a','i'], word: 'cap' },  video: 'cpu-cup-cap-ai',   lastused: '2024-10-27' },  
+  { word: 'pig', letters: ['b','g','i'], quiz: { letters: ['g','p'], word: 'big' },  video: 'bgi-pig-big-gp',   lastused: '2024-10-29' },  
+  { word: 'nod', letters: ['d','n','o'], quiz: { letters: ['r','w'], word: 'rod' },  video: 'dno-nod-rod-rw',   lastused: '2024-10-30' },  
+  { word: 'lap', letters: ['a','l','p'], quiz: { letters: ['c','h'], word: 'cap' },  video: 'alp-lap-cap-ch',   lastused: '2024-11-01' },  
+  { word: 'yak', letters: ['a','k','y'], quiz: { letters: ['m','n'], word: 'yam' },  video: 'aky-yak-yam-mn',   lastused: '2024-11-02' },  
+  { word: 'fig', letters: ['f','g','i'], quiz: { letters: ['m','w'], word: 'wig' },  video: 'fgi-fig-wig-mw',   lastused: '2024-11-04' },  
+  { word: 'sun', letters: ['n','s','u'], quiz: { letters: ['p','r'], word: 'run' },  video: 'nsu-sun-run-pr',   lastused: '2024-11-05' },  
+  { word: 'can', letters: ['a','c','n'], quiz: { letters: ['t','x'], word: 'cat' },  video: 'acn-can-cat-tx',   lastused: '2024-11-07' },  
+  { word: 'bed', letters: ['b','d','e'], quiz: { letters: ['i','u'], word: 'bud' },  video: 'bde-bed-bud-iu',   lastused: '2024-11-08' },  
+  { word: 'jam', letters: ['a','j','m'], quiz: { letters: ['k','r'], word: 'ram' },  video: 'ajm-jam-ram-kr',   lastused: '2024-11-10' },  
+  { word: 'cap', letters: ['a','c','p'], quiz: { letters: ['o','u'], word: 'cup' },  video: 'acp-cap-cup-ou',   lastused: '2024-11-11' },  
+  { word: 'cub', letters: ['b','c','u'], quiz: { letters: ['k','p'], word: 'cup' },  video: 'bcu-cub-cup-kp',   lastused: '2024-11-12' },  
+  { word: 'six', letters: ['i','s','x'], quiz: { letters: ['m','w'], word: 'mix' },  video: 'isx-six-mix-mw',   lastused: '2024-11-14' },  
+  { word: 'gum', letters: ['g','m','u'], quiz: { letters: ['f','h'], word: 'hum' },  video: 'gmu-gum-hum-fh',   lastused: '2024-11-15' },  
+  { word: 'fan', letters: ['a','f','n'], quiz: { letters: ['t','v'], word: 'fat' },  video: 'afn-fan-fat-tv',   lastused: '2024-11-17' },  
+  { word: 'bus', letters: ['b','s','u'], quiz: { letters: ['g','p'], word: 'bug' },  video: 'bsu-bus-bug-gp',   lastused: '2024-11-18' },  
+  { word: 'cut', letters: ['c','t','u'], quiz: { letters: ['g','p'], word: 'cup' },  video: 'ctu-cut-cup-gp',   lastused: '2024-11-20' },  
+  { word: 'pen', letters: ['e','n','p'], quiz: { letters: ['q','t'], word: 'ten' },  video: 'enp-pen-ten-qt',   lastused: '2024-11-21' },  
+  { word: 'bun', letters: ['b','n','u'], quiz: { letters: ['f','k'], word: 'fun' },  video: 'bnu-bun-fun-fk',   lastused: '2024-11-22' },  
+  { word: 'bed', letters: ['b','d','e'], quiz: { letters: ['l','r'], word: 'red' },  video: 'bde-bed-red-lr',   lastused: '2024-11-24' },  
+  { word: 'man', letters: ['a','m','n'], quiz: { letters: ['e','o'], word: 'men' },  video: 'amn-man-men-eo',   lastused: '2024-11-25' },  
+  { word: 'sax', letters: ['a','s','x'], quiz: { letters: ['q','x'], word: 'taxi' }, video: 'asx-sax-taxi-qx',  lastused: '2024-11-27' },  
+  { word: 'mud', letters: ['d','m','u'], quiz: { letters: ['b','f'], word: 'bud' },  video: 'dmu-mud-bud-bf',   lastused: '2024-11-28' },  
+  { word: 'mop', letters: ['m','o','p'], quiz: { letters: ['f','t'], word: 'top' },  video: 'mop-mop-top-ft',   lastused: '2024-11-30' },  
+  { word: 'hen', letters: ['e','h','n'], quiz: { letters: ['f','t'], word: 'ten' },  video: 'ehn-hen-ten-ft',   lastused: '2024-12-01' },  
+  { word: 'pod', letters: ['d','o','p'], quiz: { letters: ['r','s'], word: 'rod' },  video: 'dop-pod-rod-rs',   lastused: '2024-12-03' },  
+  { word: 'pan', letters: ['a','n','p'], quiz: { letters: ['c','w'], word: 'can' },  video: 'anp-pan-can-cw-2', lastused: '2024-12-04' },  
+  { word: 'pig', letters: ['g','i','p'], quiz: { letters: ['b','q'], word: 'big' },  video: 'gip-pig-big-bq',   lastused: '2024-12-06' },  
+  { word: 'tap', letters: ['a','p','t'], quiz: { letters: ['n','w'], word: 'nap' },  video: 'apt-tap-nap-nw',   lastused: '2024-12-07' },  
+  { word: 'fig', letters: ['f','i','g'], quiz: { letters: ['n','w'], word: 'fin' },  video: 'fgi-fig-fin-nw',   lastused: '2024-12-09' }, // Renamed from (fin-fin-fig-nw)
+  { word: 'dog', letters: ['d','g','o'], quiz: { letters: ['f','t'], word: 'dot' },  video: 'dgo-dog-dot-ft',   lastused: '2024-12-10' },  
+  { word: 'fin', letters: ['f','i','n'], quiz: { letters: ['a','o'], word: 'fan' },  video: 'fin-fin-fan-ao',   lastused: '2024-12-12' },  
+  { word: 'web', letters: ['b','e','w'], quiz: { letters: ['h','t'], word: 'wet' },  video: 'bew-web-wet-ht',   lastused: '2024-12-13' },  
+  { word: 'net', letters: ['e','n','t'], quiz: { letters: ['n','u'], word: 'nut' },  video: 'ent-net-nut-nu',   lastused: '2024-12-15' },  
+  { word: 'gum', letters: ['g','m','u'], quiz: { letters: ['f','h'], word: 'hum' },  video: 'gmu-gum-hum-fh-2', lastused: '2024-12-16' },  
+  { word: 'rat', letters: ['a','r','t'], quiz: { letters: ['h','w'], word: 'hat' },  video: 'art-rat-hat-hw',   lastused: '2024-12-18' },  
+  { word: 'bus', letters: ['b','s','u'], quiz: { letters: ['d','t'], word: 'bud' },  video: 'bsu-bus-bud-dt',   lastused: '2024-12-19' },  
+  { word: 'mud', letters: ['d','m','u'], quiz: { letters: ['d','k'], word: 'bud' },  video: 'dmu-mud-bud-dk',   lastused: '2024-12-20' },  
+  { word: 'sit', letters: ['i','s','t'], quiz: { letters: ['h','y'], word: 'hit' },  video: 'ist-sit-hit-hy',   lastused: '2024-12-22' },  
+  { word: 'fin', letters: ['f','i','n'], quiz: { letters: ['w','z'], word: 'win' },  video: 'fin-fin-win-wz',   lastused: '2024-12-23' },  
+  { word: 'man', letters: ['a','m','n'], quiz: { letters: ['v','w'], word: 'van' },  video: 'amn-man-van-vw',   lastused: '2024-12-25' },  
+  { word: 'lid', letters: ['d','i','l'], quiz: { letters: ['k','z'], word: 'kid' },  video: 'dil-lid-kid-kz',   lastused: '2024-12-26' },  
+  { word: 'top', letters: ['o','p','t'], quiz: { letters: ['h','k'], word: 'hop' },  video: 'opt-top-hop-hk',   lastused: '2024-12-28' },  
+  { word: 'cog', letters: ['c','g','o'], quiz: { letters: ['t','w'], word: 'cot' },  video: 'cgo-cog-cot-tw',   lastused: '2025-01-04' },  
+  { word: 'fun', letters: ['f','n','u'], quiz: { letters: ['l','r'], word: 'run' },  video: 'fnu-fun-run-lr',   lastused: '2025-01-06' },  
+  { word: 'red', letters: ['d','e','r'], quiz: { letters: ['b','n'], word: 'bed' },  video: 'der-red-bed-bn',   lastused: '2025-01-07' },  
+  { word: 'cat', letters: ['a','c','t'], quiz: { letters: ['c','r'], word: 'rat' },  video: 'act-cat-rat-cr',   lastused: '2025-01-08' },  
+  { word: 'van', letters: ['a','n','v'], quiz: { letters: ['d','p'], word: 'pan' },  video: 'anv-van-pan-dp',   lastused: '2025-01-10' },  
+  { word: 'fog', letters: ['f','g','o'], quiz: { letters: ['i','u'], word: 'fig' },  video: 'fgo-fog-fig-iu',   lastused: '2025-01-11' },  
+  { word: 'lap', letters: ['a','l','p'], quiz: { letters: ['m','x'], word: 'map' },  video: 'alp-lap-map-mx',   lastused: '2025-01-13' },  
+  { word: 'bat', letters: ['a','b','t'], quiz: { letters: ['q','r'], word: 'rat' },  video: 'abt-bat-rat-qr',   lastused: '2025-01-14' },  
+  { word: 'map', letters: ['a','m','p'], quiz: { letters: ['e','o'], word: 'mop' },  video: 'amp-map-mop-eo',   lastused: '2025-01-15' },  
+  { word: 'gum', letters: ['g','m','u'], quiz: { letters: ['j','s'], word: 'sum' },  video: 'gmu-gum-sum-js',   lastused: '2025-01-16' },  
+  { word: 'lap', letters: ['a','l','p'], quiz: { letters: ['t','y'], word: 'tap' },  video: 'alp-lap-tap-ty',   lastused: '2025-01-18' },  
+  { word: 'ham', letters: ['a','h','m'], quiz: { letters: ['w','y'], word: 'yam' },  video: 'ahm-ham-yam-wy',   lastused: '2025-01-19' },  
+  { word: 'dot', letters: ['d','o','t'], quiz: { letters: ['p','q'], word: 'pot' },  video: 'dot-dot-pot-pq',   lastused: '2025-01-21' },  
+  { word: 'leg', letters: ['e','g','l'], quiz: { letters: ['i','o'], word: 'log' },  video: 'egl-leg-log-io',   lastused: '2025-01-22' },  
+  { word: 'cat', letters: ['a','c','t'], quiz: { letters: ['t','h'], word: 'hat' },  video: 'act-cat-hat-th',   lastused: '2025-01-23' },  
+  { word: 'dig', letters: ['d','g','i'], quiz: { letters: ['b','q'], word: 'big' },  video: 'dgi-dig-big-bq',   lastused: '2025-01-25' },  
+  { word: 'tub', letters: ['b','t','u'], quiz: { letters: ['c','v'], word: 'cub' },  video: 'btu-tub-cub-cv',   lastused: '2025-01-26' },  
+  { word: 'hat', letters: ['a','h','t'], quiz: { letters: ['e','o'], word: 'hot' },  video: 'aht-hat-hot-eo',   lastused: '2025-01-27' },  
+  { word: 'tag', letters: ['a','g','t'], quiz: { letters: ['b','l'], word: 'bag' },  video: 'agt-tag-bag-bl',   lastused: '2025-01-29' },  
+  { word: 'dog', letters: ['d','g','o'], quiz: { letters: ['l','r'], word: 'log' },  video: 'dgo-dog-log-lr',   lastused: '2025-01-30' },  
+  { word: 'dot', letters: ['d','o','t'], quiz: { letters: ['g','m'], word: 'dog' },  video: 'dot-dot-dog-gm',   lastused: '2025-01-31' },  
+  { word: 'ten', letters: ['e','n','t'], quiz: { letters: ['b','h'], word: 'hen' },  video: 'ent-ten-hen-bh',   lastused: '2025-02-02' },  
+  { word: 'bus', letters: ['b','s','u'], quiz: { letters: ['g','p'], word: 'bug' },  video: 'bsu-bus-bug-gp-2', lastused: '2025-02-04' },  
+  { word: 'leg', letters: ['e','g','l'], quiz: { letters: ['p','r'], word: 'peg' },  video: 'egl-leg-peg-pr',   lastused: '2025-02-05' },  
+  { word: 'sun', letters: ['n','s','u'], quiz: { letters: ['j','r'], word: 'run' },  video: 'nsu-sun-run-jr',   lastused: '2025-02-07' },  
+  { word: 'kid', letters: ['d','i','k'], quiz: { letters: ['g','t'], word: 'kit' },  video: 'dik-kid-kit-gt',   lastused: '2025-02-08' },  
+  { word: 'dot', letters: ['d','o','t'], quiz: { letters: ['b','h'], word: 'hot' },  video: 'dot-dot-hot-bh',   lastused: '2025-02-10' },  
+  { word: 'six', letters: ['i','s','x'], quiz: { letters: ['j','m'], word: 'mix' },  video: 'isx-six-mix-jm',   lastused: '2025-02-11' },  
+  { word: 'cap', letters: ['a','p','c'], quiz: { letters: ['a','i'], word: 'cup' },  video: 'apc-cap-cup-ai',   lastused: '2025-02-12' },  
+  { word: 'nod', letters: ['d','n','o'], quiz: { letters: ['p','r'], word: 'rod' },  video: 'dno-nod-rod-pr',   lastused: '2025-02-13' },  
+  { word: 'kit', letters: ['i','k','t'], quiz: { letters: ['h','l'], word: 'hit' },  video: 'ikt-kit-hit-hl',   lastused: '2025-02-15' },  
+  { word: 'kit', letters: ['i','k','t'], quiz: { letters: ['d','s'], word: 'sit' },  video: 'ikt-kit-sit-ds',   lastused: '2025-02-16' },  
+  { word: 'bug', letters: ['b','g','u'], quiz: { letters: ['d','x'], word: 'bud' },  video: 'bgu-bug-bud-dx',   lastused: '2025-02-17' },  
+  { word: 'fox', letters: ['f','o','x'], quiz: { letters: ['f','m'], word: 'box' },  video: 'fox-fox-box-fm',   lastused: '2025-02-19' }, // FM video does not exist!!
+  { word: 'pig', letters: ['g','i','p'], quiz: { letters: ['d','g'], word: 'dig' },  video: 'gip-pig-dig-dg',   lastused: '2025-02-21' },  
+  { word: 'sad', letters: ['a','d','s'], quiz: { letters: ['b','d'], word: 'bad' },  video: 'ads-sad-bad-bd',   lastused: '2025-02-22' },  
+  { word: 'pan', letters: ['a','n','p'], quiz: { letters: ['c','w'], word: 'can' },  video: 'anp-pan-can-cw',   lastused: '2025-02-23' },  
+  { word: 'fin', letters: ['f','i','n'], quiz: { letters: ['p','q'], word: 'pin' },  video: 'fin-fin-pin-pq',   lastused: '2025-02-25' },  
+  { word: 'mat', letters: ['a','m','t'], quiz: { letters: ['k','p'], word: 'map' },  video: 'amt-mat-map-kp',   lastused: '2025-02-26' },  
+  { word: 'gas', letters: ['a','g','s'], quiz: { letters: ['n','p'], word: 'gap' },  video: 'ags-gas-gap-np',   lastused: '2025-02-28' },  
+  { word: 'van', letters: ['a','n','v'], quiz: { letters: ['b','p'], word: 'pan' },  video: 'anv-van-pan-bp',   lastused: '2025-03-01' },  
+  { word: 'nut', letters: ['n','t','u'], quiz: { letters: ['c','f'], word: 'cut' },  video: 'ntu-nut-cut-cf',   lastused: '2025-03-03' },  
+  { word: 'rat', letters: ['a','r','t'], quiz: { letters: ['m','n'], word: 'ram' },  video: 'art-rat-ram-mn',   lastused: '2025-03-04' },  
+  { word: 'sad', letters: ['a','d','s'], quiz: { letters: ['d','q'], word: 'dad' },  video: 'ads-sad-dad-dq',   lastused: '2025-03-05' },  
+  { word: 'pod', letters: ['d','o','p'], quiz: { letters: ['f','t'], word: 'pot' },  video: 'dop-pod-pot-ft',   lastused: '2025-03-07' },  
+  { word: 'sun', letters: ['n','s','u'], quiz: { letters: ['m','r'], word: 'run' },  video: 'nsu-sun-run-mr',   lastused: '2025-03-08' },  
+  { word: 'nut', letters: ['n','t','u'], quiz: { letters: ['d','n'], word: 'nun' },  video: 'ntu-nut-nun-dn',   lastused: '2025-03-09' },  
+  { word: 'hug', letters: ['g','h','u'], quiz: { letters: ['b','d'], word: 'bug' },  video: 'ghu-hug-bug-bd',   lastused: '2025-03-11' },  
+  { word: 'pat', letters: ['a','p','t'], quiz: { letters: ['h','z'], word: 'hat' },  video: 'apt-pat-hat-hz',   lastused: '2025-03-12' },  
+  { word: 'elk', letters: ['e','k','l'], quiz: { letters: ['f','k'], word: 'elf' },  video: 'ekl-elk-elf-fk-2', lastused: '2025-03-13' },  
+  { word: 'hot', letters: ['h','o','t'], quiz: { letters: ['p','t'], word: 'hop' },  video: 'hot-hot-hop-pt',   lastused: '2025-03-15' },  
+  { word: 'cat', letters: ['a','c','t'], quiz: { letters: ['u','y'], word: 'cut' },  video: 'act-cat-cut-uy',   lastused: '2025-03-16' },  
+  { word: 'sad', letters: ['a','d','s'], quiz: { letters: ['d','p'], word: 'dad' },  video: 'ads-sad-dad-dp',   lastused: '2025-03-17' },  
+  { word: 'lip', letters: ['i','l','p'], quiz: { letters: ['b','p'], word: 'pip' },  video: 'ilp-lip-pip-bp',   lastused: '2025-03-19' },  
+  { word: 'fin', letters: ['f','i','n'], quiz: { letters: ['g','h'], word: 'fig' },  video: 'fin-fin-fig-gh',   lastused: '2025-03-20' },  
+  { word: 'gum', letters: ['g','m','u'], quiz: { letters: ['s','v'], word: 'sum' },  video: 'gmu-gum-sum-sv',   lastused: '2025-03-21' },  
+  { word: 'nap', letters: ['a','n','p'], quiz: { letters: ['c','s'], word: 'cap' },  video: 'anp-nap-cap-cs',   lastused: '2025-03-23' },  
+  { word: 'wax', letters: ['a','w','x'], quiz: { letters: ['g','t'], word: 'wag' },  video: 'awx-wax-wag-gt',   lastused: '2025-03-24' },  
+  { word: 'pin', letters: ['i','n','p'], quiz: { letters: ['v','w'], word: 'win' },  video: 'inp-pin-win-vw',   lastused: '2025-03-25' },  
+  { word: 'sun', letters: ['n','s','u'], quiz: { letters: ['b','l'], word: 'bun' },  video: 'nsu-sun-bun-bl',   lastused: '2025-03-27' },  
+  { word: 'cog', letters: ['c','g','o'], quiz: { letters: ['f','y'], word: 'fog' },  video: 'cgo-cog-fog-fy',   lastused: '2025-03-29' },  
+  { word: 'pot', letters: ['o','p','t'], quiz: { letters: ['e','u'], word: 'pet' },  video: 'opt-pot-pet-eu',   lastused: '2025-03-30' },  
+  { word: 'six', letters: ['i','s','x'], quiz: { letters: ['g','t'], word: 'sit' },  video: 'isx-six-sit-gt',   lastused: '2025-04-01' },  
+  { word: 'dig', letters: ['d','g','i'], quiz: { letters: ['w','x'], word: 'wig' },  video: 'dgi-dig-wig-wx',   lastused: '2025-04-02' },  
+  { word: 'rod', letters: ['d','o','r'], quiz: { letters: ['a','e'], word: 'red' },  video: 'dor-rod-red-ae',   lastused: '2025-04-04' },  
+  { word: 'top', letters: ['o','p','t'], quiz: { letters: ['m','n'], word: 'mop' },  video: 'opt-top-mop-mn',   lastused: '2025-04-05' },  
+  { word: 'hat', letters: ['a','h','t'], quiz: { letters: ['r','z'], word: 'rat' },  video: 'aht-hat-rat-rz',   lastused: '2025-04-07' }
+]

@@ -1,7 +1,7 @@
 export const alphabet_chant = [
-  'Vehicles',
-  'Actions',
-  'Food',
-  'Animals', // really should be named 'Animals-1'
-  'Animals-2'
+  'vehicles',
+  'actions',
+  'food',
+  'animals', // really should be named 'animals-1'
+  'animals-2'
 ]

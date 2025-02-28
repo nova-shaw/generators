@@ -17,19 +17,37 @@ const log = console.log;
 const date = new Date(`${startYearMonth.year} ${startYearMonth.month} 1`);
 const endDate = new Date(`${startYearMonth.year+1} ${startYearMonth.month} 1`);
 
+const schedule = [];
+
+while (date < endDate) {
+  const row = {
+    date_iso: date.toISOString().substring(0, 10),
+    date: date.getTime()
+  };
+  // row.date = date.toISOString();
+  // row.date = date.toISODate();
+  // row.date = date.toISOString().substring(0, 10);
+  // row.date = date;
+
+  schedule.push(row);
+
+  date.setDate(date.getDate() + 1);
+}
+
+log(schedule);
 
 const frag = document.createDocumentFragment();
-while (date < endDate) {
-  const p = document.createElement('p');
+schedule.forEach( row => {
+  const date = new Date(row.date);
 
   const month = date.toLocaleString('default', { month: 'short' });
   const weekday = date.toLocaleString('default', {  weekday: 'short' });
-  p.textContent = `${date.getFullYear()} ${month} ${date.getDate()} - ${weekday}`;
-
-  frag.appendChild(p);
   
-  date.setDate(date.getDate() + 1);
-}
+  const p = document.createElement('p');
+  p.textContent = `${date.getFullYear()} ${month} ${date.getDate()} - ${weekday}`;
+  
+  frag.appendChild(p);
+});
 
 document.body.appendChild(frag);
 

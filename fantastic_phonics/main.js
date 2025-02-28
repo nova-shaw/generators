@@ -1,7 +1,4 @@
 
-const log = console.log;
-
-
 //// Settings
 
 const startYearMonth = { year: 2025, month: 'april' }; //// month must be full name, not number, capitalisation is ignored
@@ -10,28 +7,27 @@ const durationMonths = 12;
 
 //// Internals
 
-// const date = Temporal.PlainDate.from(`${start.year} ${start.month} 1`);
-// const date = Temporal.PlainDate.from('2024-12-27');
-// log(date);
+const log = console.log;
 
-// const startDate = new Date( `${start.year} ${start.month} 1`);
-const date = new Date('2024-12-27 00:00');
-const days = 30;
-// const startParsed = { y: startDate.getFullYear(), m: startDate.getMonth(), d: startDate.getDate()  };
-// log(startDate);
-// log(startParsed);
+const date = new Date(`${startYearMonth.year} ${startYearMonth.month} 1`);
+const endDate = new Date(`${startYearMonth.year+1} ${startYearMonth.month} 1`);
 
-/*for (var i = 0; i < days; i++) {
-  // const month = startParsed.getMonth() + 0;
-  // log(startDate.getFullYear())
+
+const frag = document.createDocumentFragment();
+while (date < endDate) {
+  const p = document.createElement('p');
+
+  const month = date.toLocaleString('default', { month: 'short' });
+  const weekday = date.toLocaleString('default', {  weekday: 'short' });
+  p.textContent = `${date.getFullYear()} ${month} ${date.getDate()} - ${weekday}`;
+
+  frag.appendChild(p);
+  
   date.setDate(date.getDate() + 1);
-  log('--', date);
 }
-*/
-let daysDone = 0;
 
-while (daysDone < days) {
-  log(daysDone + 1, date);
-  date.setDate(date.getDate() + 1);
-  daysDone += 1;
-}
+document.body.appendChild(frag);
+
+
+
+//// Oh, how I long for Temporal... https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal

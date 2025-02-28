@@ -7,7 +7,7 @@ import { alphabet_chant as chant } from './data/alphabet_chant.js'; // 5 items
 //// Settings
 
 const startYearMonth = { year: 2025, month: 'april' }; //// month must be full name, not number, capitalisation is ignored
-const durationMonths = 12;
+const durationMonths = 5;
 
 
 //// Internals
@@ -15,7 +15,17 @@ const durationMonths = 12;
 const log = console.log;
 
 const date = new Date(`${startYearMonth.year} ${startYearMonth.month} 1`);
-const endDate = new Date(`${startYearMonth.year+1} ${startYearMonth.month} 1`);
+log(date);
+// log(date.getMonth(), date.getMonth() + 2);
+// const endDate = new Date(`${startYearMonth.year+1} ${startYearMonth.month} 1`);
+// const endDate = new Date(`${startYearMonth.year}-${date.getMonth() + durationMonths} 1`);
+// const endDateString = `${startYearMonth.year}-${date.getMonth() + 1 + durationMonths}-1`
+// log(endDateString);
+// const endDate = new Date(date.setMonth(date.getMonth() + durationMonths));
+const endDate = new Date(new Date(date).setMonth(date.getMonth() + durationMonths));
+// const endDate = new Date(endDateString);
+// log(endDate.getMonth());
+log(endDate);
 
 const schedule = [];
 

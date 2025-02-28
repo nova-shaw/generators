@@ -1,3 +1,4 @@
+import { alphabet_chant } from './data/alphabet_chant.js';
 import { usagi_vocab } from './data/usagi_vocab.js';
 import { fp_adventure } from './data/fp_adventure.js';
 import { letter_search } from './data/letter_search.js';

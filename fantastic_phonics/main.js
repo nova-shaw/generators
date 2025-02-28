@@ -1,3 +1,7 @@
+import { usagi_vocab } from './data/usagi_vocab.js';
+import { fp_adventure } from './data/fp_adventure.js';
+import { letter_search } from './data/letter_search.js';
+
 
 //// Settings
 

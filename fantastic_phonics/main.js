@@ -9,7 +9,7 @@ const log = console.log;
 //// Settings
 
 const startYearMonth = { year: 2025, month: 'april' }; //// month must be full name, not number, capitalisation is ignored
-const durationMonths = 1;
+const durationMonths = 12;
 
 
 //////// Schedule creation

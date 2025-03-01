@@ -9,7 +9,7 @@ const log = console.log;
 //// Settings
 
 const startYearMonth = { year: 2025, month: 'april' }; //// month must be full name, not number, capitalisation is ignored
-const durationMonths = 12;
+const durationMonths = 1;
 
 
 //////// Schedule creation
@@ -22,8 +22,11 @@ const used = {
   vocab: [],
   chant: [],
   search: [], //// every 2-5 days this should be an ADVENTURE!
-  adventure: [],
-  adventure_days: 0
+  adventure: []
+}
+
+const spacing = {
+  adventure: { last: 0, gap: 3 }
 }
 
 // Generate functional dates
@@ -33,25 +36,59 @@ const endDate = new Date(new Date(date).setMonth(date.getMonth() + durationMonth
 // Loop through every day between `date` and `endDate`, incrementing `date` each loop
 while (date < endDate) {
 
-  // Choose a random index for each of the source arrays
-  const vocabIndex     = chooseIndex(usagi_vocab,    used.vocab,     30);
-  const chantIndex     = chooseIndex(alphabet_chant, used.chant,     2);
-  const searchIndex    = chooseIndex(letter_search,  used.search,    30);
-  const adventureIndex = chooseIndex(fp_adventure,   used.adventure, 7);
+  // Prep day data structure
+  const day = {
+    date:   date.getTime(), //// Store date as Unix epoch
+    weekday: date.getDay(),
+    vocab:  null,
+    chant:  null,
+    // search: null,
+    hunt: { type: null, data: null } 
+  };
+
+  // Choose a random index for the source arrays that are always needed
+  const vocabIndex = chooseIndex(usagi_vocab,    used.vocab, 30);
+  const chantIndex = chooseIndex(alphabet_chant, used.chant, 2);
 
   // Use those indexes to pull in the actual data for current day (and set the date)
-  const day = {
-    date:      date.getTime(), //// Store date as Unix epoch
-    vocab:     usagi_vocab[vocabIndex],
-    chant:     alphabet_chant[chantIndex],
-    search:    letter_search[searchIndex],
-    adventure: fp_adventure[adventureIndex]
-  };
+  day.vocab = usagi_vocab[vocabIndex];
+  day.chant = alphabet_chant[chantIndex];
+
+
+
+  // 'search' is sometimes 'adventure'
+  // if (spacing.adventure.last == null || date - spacing.adventure.last == spacing.adventure.gap) {
+  if (spacing.adventure.last == spacing.adventure.gap) {
+
+    // log('adventure');
+    day.hunt.type = 'adventure';
+
+    // Choose a random index for 'adventure' array
+    const adventureIndex = chooseIndex(fp_adventure, used.adventure, 7);
+    day.hunt.data = fp_adventure[adventureIndex];
+
+    // Reset days since last adventure
+    spacing.adventure.last = 0;
+    
+    // Choose next adventure gap
+    spacing.adventure.gap  = randomIntegerInclusive(2, 5);
+
+
+  // 'search' is sometimes just a 'search'
+  } else {
+
+    day.hunt.type = 'search';
+
+    // Choose a random index for 'adventure' array
+    const searchIndex = chooseIndex(letter_search, used.search, 30);
+    day.hunt.data = letter_search[searchIndex];
+  }
 
   // Add current day to end of the schedule array
   schedule.push(day);
 
-  // used.adv_days += 1;
+  // Increment days since last adventure
+  spacing.adventure.last += 1;
 
   // Increment date
   date.setDate(date.getDate() + 1);
@@ -77,11 +114,19 @@ function chooseIndex(sourceArray, usedArray, numberToSpliceWhenFull) {
 function randomIndexExclude(array, excludeArray) {
   let chosen = null;
   while (chosen === null) {
-    const candidate = Math.floor(Math.random() * array.length | 0);
+    // const candidate = Math.floor(Math.random() * array.length | 0);
+    const candidate = randomIntegerInclusive(0, array.length - 1);
     if (excludeArray.indexOf(candidate) === -1) chosen = candidate;
   }
   return chosen;
 }
+
+function randomIntegerInclusive(min, max) { // Thanks https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random#getting_a_random_integer_between_two_values_inclusive
+  const minCeiled = Math.ceil(min);
+  const maxFloored = Math.floor(max);
+  return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive
+}
+
 
 log(schedule);
 
@@ -97,23 +142,43 @@ schedule.forEach( row => {
   const month = date.toLocaleString('default', { month: 'short' });
   const weekday = date.toLocaleString('default', {  weekday: 'short' });
   dateSpan.textContent = `${date.getFullYear()} ${month} ${date.getDate()} - ${weekday}`;
+  p.classList.toggle('sunday', date.getDay() === 0);
   p.appendChild(dateSpan);
 
   const vocabSpan = document.createElement('span');
+  vocabSpan.classList.add('vocab');
   vocabSpan.textContent = `Vocab: ${row.vocab.object.letter} - ${row.vocab.object.word}`;
   p.appendChild(vocabSpan);
 
   const chantSpan = document.createElement('span');
+  chantSpan.classList.add('chant');
   chantSpan.textContent = `Chant: ${row.chant}`;
   p.appendChild(chantSpan);
 
+  /*
   const searchSpan = document.createElement('span');
   searchSpan.textContent = `Search: ${row.search.word} - ${row.search.video}`;
   p.appendChild(searchSpan);
 
   const adventureSpan = document.createElement('span');
   adventureSpan.textContent = `Adventure: ${row.adventure.word}`;
-  p.appendChild(adventureSpan);
+  p.appendChild(adventureSpan);*/
+
+  const huntSpan = document.createElement('span');
+  huntSpan.textContent = `${row.hunt.type}: `;
+  huntSpan.classList.add(`type-${row.hunt.type}`);
+
+  const huntContentSpan = document.createElement('span');
+  if (row.hunt.type == 'adventure') {
+    huntContentSpan.textContent = `${row.hunt.data.word}`;
+  } else {
+    huntContentSpan.textContent = `${row.hunt.data.word} - ${row.hunt.data.video}`;
+  }
+  huntSpan.appendChild(huntContentSpan);
+
+  p.appendChild(huntSpan);
+
+
   
   frag.appendChild(p);
 });

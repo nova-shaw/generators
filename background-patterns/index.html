@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SVG pattern</title>
+  <style>
+    
+    *, *::before, *::after { box-sizing: border-box }
+    
+    body {
+      font: 14px / 1.25 sans-serif;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    button {
+      font: inherit;
+      min-width: 7em;
+      text-align: left;
+    }
+
+    textarea {
+      font-size: 12px;
+      font-family: monospace;
+      width: 100%;
+      overflow: hidden;
+      resize: none;
+    }
+
+    main {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 100dvh;
+    }
+
+    #background {
+      display: block;
+      margin: 0;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100dvh;
+      --pattern-color1: #a49aca;
+      --pattern-color2: #817dba;
+      z-index: 1;
+    }
+
+    #pattern-background {
+      background: var(--pattern-color1);
+      color: var(--pattern-color2);
+    }
+
+
+
+    #controls {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 1em;
+      background: #0003;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      z-index: 5;
+    }
+
+    #choosers {
+      display: inline-flex;
+      flex-direction: row;
+      gap: inherit;
+    }
+
+    #pattern-chooser {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #color-chooser {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #json-output {
+      height: 7em;
+    }
+
+    .card {
+      position: relative;
+      width: 80vw;
+      aspect-ratio: 4/3;
+      max-width: 120vh;
+      background: #fff;
+      border-radius: 3vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      font-size: 3vw;
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+
+    <!-- SVG Pattern Backgrounds (responsive resizing - https://stackoverflow.com/a/9412596) -->
+
+    <figure id="background">
+
+      <svg id="pattern-background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+        
+        <defs>
+
+          <!-- Reusable elements -->
+
+          <g id="usagi-head1" viewBox="0 0 100 100">
+            <path d="M29.505,43.798c-1.937,-5.939 -5.093,-16.775 -4.39,-22.405c1.001,-8.009 1.638,-11.793 5.808,-12.445c4.169,-0.651 7.472,2.517 9.955,16.593c1.507,8.543 1.655,12.771 1.624,15.922c1.981,-0.078 3.949,-0.104 5.843,-0.159c2.066,-0.061 4.03,-0.05 5.895,0.03c0.146,-4.412 0.536,-10.8 1.571,-14.963c1.716,-6.901 1.711,-18.395 9.956,-17.423c8.245,0.973 5.408,11.041 4.978,17.423c-0.28,4.141 -1.594,12.339 -2.482,17.586c9.159,3.633 13.414,10.977 13.267,22.236c-0.229,17.519 -19.409,25.655 -32.356,24.888c-12.947,-0.766 -31.237,-6.85 -30.696,-26.548c0.341,-12.399 4.908,-18.083 11.027,-20.735Z"/>
+          </g>
+          <g id="usagi-head2" viewBox="0 0 100 100">
+            <path d="M73.538,47.591c5.695,4.326 8.646,11.257 7.016,22.802c-1.819,12.889 -14.344,23.53 -38.332,18.453c-17.07,-3.613 -25.991,-16.735 -22.457,-30.564c2.966,-11.609 9.244,-16.382 17.203,-17.81c0.957,-5.344 2.306,-13.105 2.641,-16.151c0.533,-4.845 0.169,-14.71 7.468,-14.455c7.298,0.255 6.874,8.149 6.456,14.453c-0.25,3.756 -1.384,10.998 -2.26,16.239c1.377,0.176 2.771,0.382 4.177,0.609c2.017,0.325 3.97,0.701 5.836,1.151c1.462,-5.388 3.604,-13.34 4.462,-16.835c1.359,-5.537 2.25,-11.343 8.178,-11.169c5.928,0.175 8.04,9.995 4.806,18.948c-1.852,5.127 -3.836,10.593 -5.194,14.329Z"/>
+          </g>
+          <g id="usagi-head3" viewBox="0 0 100 100">
+            <path d="M66.51,41.198c6.089,2.175 11.078,7.434 13.084,18.449c3.77,20.698 -8.373,29.481 -24.721,32.263c-16.347,2.782 -30.26,-1.489 -34.377,-20.205c-2.448,-11.129 0.935,-18.948 9.122,-24.169c-1.527,-4.742 -4.143,-13.098 -5.171,-17.794c-1.492,-6.814 -4.241,-13.829 -0.14,-15.991c5.131,-2.706 10.108,2.09 12.842,11.892c1.929,6.918 3.508,12.925 4.514,16.836c1.288,-0.354 2.627,-0.681 4.017,-0.981c2.311,-0.499 4.742,-0.964 7.201,-1.264c-0.612,-4.844 -1.504,-12.367 -1.805,-17.33c-0.475,-7.83 -2.925,-14.325 1.476,-15.443c4.401,-1.119 10.736,4.247 12.433,17.05c0.932,7.04 1.344,12.867 1.525,16.687Z"/>
+          </g>
+          <g id="usagi-head4" viewBox="0 0 100 100">
+            <path d="M73.182,46.881c3.939,5.169 5.964,11.616 6.052,18.398c0.201,15.583 -12.863,28.274 -33,27c-20.138,-1.275 -30.051,-10.698 -31,-28c-0.857,-15.622 10.312,-27.16 27.318,-28.816c1.068,-4.062 2.867,-9.872 5.682,-16.184c4.716,-10.576 11.267,-13.014 15,-11c5.848,3.155 -0.59,10.461 -2.491,17.207c-1.076,3.818 -2.188,7.959 -3.039,11.173c1.177,0.328 2.305,0.71 3.386,1.143c1.471,-3.334 3.683,-7.914 6.144,-11.523c4.368,-6.407 9.399,-12.872 15,-10c5.6,2.871 0.901,12.263 -3,18c-2.478,3.643 -4.56,8.629 -6.052,12.602Z"/>
+          </g>
+          <g id="usagi-head5" viewBox="0 0 100 100">
+            <path d="M32.579,38.259l-0.064,-19.764c-0.016,-4.957 0.57,-11.942 5.893,-12.198c5.323,-0.255 7.193,4.498 7.193,11.819l0,17.914c1.566,-0.09 3.171,-0.138 4.81,-0.154c1.319,-0.014 2.633,0.031 3.936,0.135l-0.058,-17.759c-0.016,-4.957 0.57,-11.942 5.893,-12.197c5.323,-0.255 7.194,4.498 7.194,11.819l-0,21.397c9.757,4.425 16.836,13.192 16.715,26.406c-0.139,15.176 -9.724,28.024 -34.171,28.274c-20.344,0.209 -34.095,-8.954 -34.012,-27.67c0.075,-16.841 6.577,-24.628 16.671,-28.022Z"/>
+          </g>
+          <g id="circle1" viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="14" fill="currentColor"/>
+          </g>
+          <g id="star1" viewBox="0 0 32 32">
+            <path d="M14.506,1.907c0.29,-0.557 0.866,-0.907 1.494,-0.907c0.628,0 1.204,0.35 1.494,0.907l3.234,6.228c0.127,0.246 0.311,0.459 0.535,0.621c0.224,0.163 0.483,0.272 0.756,0.317l6.922,1.152c0.62,0.103 1.131,0.542 1.325,1.14c0.194,0.597 0.039,1.253 -0.402,1.701l-4.923,5c-0.194,0.197 -0.34,0.437 -0.426,0.701c-0.085,0.263 -0.108,0.543 -0.067,0.817l1.044,6.939c0.093,0.621 -0.167,1.243 -0.675,1.612c-0.508,0.369 -1.18,0.425 -1.742,0.144l-6.277,-3.137c-0.248,-0.124 -0.521,-0.188 -0.798,-0.188c-0.277,-0 -0.55,0.064 -0.798,0.188l-6.277,3.137c-0.562,0.281 -1.234,0.225 -1.742,-0.144c-0.508,-0.369 -0.768,-0.991 -0.675,-1.612l1.044,-6.939c0.041,-0.274 0.018,-0.554 -0.067,-0.817c-0.086,-0.264 -0.232,-0.504 -0.426,-0.701l-4.923,-5c-0.441,-0.448 -0.596,-1.104 -0.402,-1.701c0.194,-0.598 0.705,-1.037 1.325,-1.14l6.922,-1.152c0.273,-0.045 0.532,-0.154 0.756,-0.317c0.224,-0.162 0.408,-0.375 0.535,-0.621l3.234,-6.228Z"/>
+          </g>
+          <g id="triangle1" viewBox="0 0 32 32">
+            <path d="M14.268,7.203c0.357,-0.619 1.017,-1.001 1.732,-1.001c0.715,0 1.375,0.382 1.732,1.001c2.279,3.949 6.26,10.85 8.538,14.798c0.357,0.618 0.356,1.381 -0.001,1.999c-0.357,0.619 -1.017,1 -1.732,1c-4.556,0 -12.518,0 -17.074,0c-0.715,0 -1.375,-0.381 -1.732,-1c-0.357,-0.618 -0.358,-1.381 -0.001,-1.999c2.278,-3.948 6.259,-10.849 8.538,-14.798Z"/>
+          </g>
+
+          <!-- Patterns (some reusing above elements with `xlink:href`) -->
+
+          <pattern id="pattern-usagi" viewBox="0 0 400 400" width="23" height="23" patternUnits="userSpaceOnUse">
+            <use xlink:href="#usagi-head1" fill="currentColor" x="90" y="-50" />
+            <use xlink:href="#usagi-head2" fill="currentColor" x="-10" y="130" />
+            <use xlink:href="#usagi-head3" fill="currentColor" x="280" y="10" />
+            <use xlink:href="#usagi-head4" fill="currentColor" x="210" y="200" />
+            <use xlink:href="#usagi-head1" fill="currentColor" x="90" y="350" />
+          </pattern>
+
+          <pattern id="pattern-dots" viewBox="0 0 100 100" width="8" height="8" patternUnits="userSpaceOnUse">
+            <use xlink:href="#circle1" fill="currentColor" x="0" y="0" />
+            <use xlink:href="#circle1" fill="currentColor" x="50" y="50" />
+          </pattern>
+
+          <pattern id="pattern-stars" viewBox="0 0 100 100" width="12" height="12" patternUnits="userSpaceOnUse">
+            <use xlink:href="#star1" fill="currentColor" x="0" y="0" />
+            <use xlink:href="#star1" fill="currentColor" x="50" y="50" />
+          </pattern>
+
+          <pattern id="pattern-triangles" viewBox="0 0 120 120" width="16" height="16" patternUnits="userSpaceOnUse" style="rotate: 20deg">
+            <use xlink:href="#triangle1" fill="currentColor" x="-14" y="0" />
+            <use xlink:href="#triangle1" fill="currentColor" x="106" y="0" />
+            <use xlink:href="#triangle1" fill="currentColor" x="60" y="30" style="transform-origin:center center;rotate:-50deg" />
+            <use xlink:href="#triangle1" fill="currentColor" x="40" y="80" style="transform-origin:center center;rotate:-10deg" />
+            <use xlink:href="#triangle1" fill="currentColor" x="30" y="60" style="transform-origin:center center;rotate:40deg" />
+            <use xlink:href="#triangle1" fill="currentColor" x="80" y="80" style="transform-origin:center center;rotate:80deg" />
+            <use xlink:href="#triangle1" fill="currentColor" x="83" y="30" style="transform-origin:center center;rotate:14deg" />
+          </pattern>
+
+          <pattern id="pattern-lines" viewBox="0 0 32 8" width="4" height="1" patternUnits="userSpaceOnUse" style="rotate: -45deg">
+            <path d="M4,0l0,32" style="fill: none; stroke: currentColor; stroke-width: 16px; stroke-linecap: square;"/>
+          </pattern>
+
+          <pattern id="pattern-waves" viewBox="0 0 64 16" width="12" height="3" patternUnits="userSpaceOnUse">
+            <path d="M0,12c13,-0 19,-8 32,-8c13,-0 19,8 32,8" style="fill: none; stroke: currentColor; stroke-width: 6px;"/>
+          </pattern>
+
+        </defs>
+
+        <!-- Pattern display -->
+
+        <rect id="pattern-display" fill="url(#pattern-dots)" data-pattern="pattern-dots" x="0" y="0" width="100" height="100"/>
+
+      </svg>
+    </figure>
+
+    <div class="card">Example card</div>
+    
+
+    <div id="controls">
+      <div id="choosers">
+        <div id="color-chooser">
+          <input type="color" id="color1" name="pattern-color1" value="#7788ee">
+          <input type="color" id="color2" name="pattern-color2" value="#55ffff">
+        </div>
+        <div id="pattern-chooser"></div>
+      </div>
+      <div id="output">
+        <textarea id="json-output" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/></textarea>
+      </div>
+    </div>
+
+  </main>
+  <script>
+
+    const presets = [
+      {"pattern":"usagi","colors":{"color1":"#66e8ff","color2":"#f1ff8a"}},
+      {"pattern":"dots","colors":{"color1":"#c9a9f9","color2":"#f6b1f0"}},
+      {"pattern":"stars","colors":{"color1":"#9e98f0","color2":"#eff093"}},
+      {"pattern":"triangles","colors":{"color1":"#faffad","color2":"#6decfd"}},
+      {"pattern":"lines","colors":{"color1":"#668cff","color2":"#aea8ff"}},
+      {"pattern":"waves","colors":{"color1":"#a49aca","color2":"#817dba"}}
+    ];
+    
+    const background = document.querySelector('#background');
+    const patternDisplay = document.querySelector('#pattern-display');
+    const patternChooser = document.querySelector('#pattern-chooser');
+    const colorChooser = document.querySelector('#color-chooser');
+    const colorPicker1 = document.querySelector('#color1');
+    const colorPicker2 = document.querySelector('#color2');
+    const jsonOutput = document.querySelector('#json-output');
+
+    const allPatterns = document.querySelectorAll('pattern');
+    const frag = document.createDocumentFragment();
+    allPatterns.forEach(elm => {
+      const btn = document.createElement('button');
+      const patternID = elm.id.replace('pattern-','');
+      btn.dataset.pattern = patternID;
+      btn.textContent = patternID;
+      btn.addEventListener('click', setPattern);
+      frag.appendChild(btn);
+    })
+    patternChooser.appendChild(frag);
+
+    function setPattern(e) {
+      const button = e.currentTarget;
+      patternDisplay.setAttribute('fill', `url(#pattern-${button.dataset.pattern})`);
+      patternDisplay.dataset.pattern = button.dataset.pattern;
+      updateOutput();
+    }
+
+    colorPicker1.addEventListener('input', setColor);
+    colorPicker2.addEventListener('input', setColor);
+
+    function setColor(e) {
+      const picker = e.currentTarget;
+      background.style.setProperty(`--${picker.name}`, picker.value);
+      updateOutput();
+    }
+
+    const colorsInit = getColors();
+    colorPicker1.value = colorsInit.color1;
+    colorPicker2.value = colorsInit.color2;
+
+    function getColors() {
+      const computed = getComputedStyle(background);
+      return {
+        color1: computed.getPropertyValue('--pattern-color1'),
+        color2: computed.getPropertyValue('--pattern-color2')
+      }
+    }
+
+    function getSettings() {
+      return {
+        pattern: patternDisplay.dataset.pattern,
+        colors: getColors()
+      }
+    }
+
+    function updateOutput() {
+      jsonOutput.textContent = JSON.stringify(getSettings());
+    }
+
+    updateOutput();
+
+    console.log(document)
+    console.dir(document)
+
+  </script>
+</body>
+</html>

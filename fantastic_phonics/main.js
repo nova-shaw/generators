@@ -119,8 +119,9 @@ function randomIntegerInclusive(min, max) { // Thanks https://developer.mozilla.
   return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive
 }
 
-
-log(JSON.stringify(schedule));
+const output = document.querySelector('#text_output');
+// log(JSON.stringify(schedule));
+output.value = JSON.stringify(schedule);
 
 
 //////// Output to page as a table (Aaaaaah!)

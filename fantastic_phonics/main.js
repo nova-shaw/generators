@@ -120,7 +120,7 @@ function randomIntegerInclusive(min, max) { // Thanks https://developer.mozilla.
 }
 
 
-// log(JSON.stringify(schedule));
+log(JSON.stringify(schedule));
 
 
 //////// Output to page as a table (Aaaaaah!)
@@ -202,5 +202,5 @@ schedule.forEach( item => {
 });
 
 table.appendChild(tbody);
-
-document.body.appendChild(table);
+const main = document.querySelector('main')
+main.appendChild(table);

@@ -6,7 +6,8 @@
   <title>FP/GM Gen</title>
   <script src="main.js" type="module"></script>
   <style>
-    *, *:* { box-sizing: border-box; }
+    
+    *, *::before, *::after { box-sizing: border-box }
 
     body {
       font: 16px/1.25 sans-serif;
@@ -14,31 +15,143 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      background: #eee;
     }
 
+    main {
+      width: 100%;
+      max-width: 40em;
+      padding-bottom: 20vh;
+    }
+
+    h1 {
+      font-size: 1em;
+      margin: 1em 0;
+      color: #669bcc;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    #controls {
+      /* padding: 0.5em; */
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      background: #96bfe4;
+      padding: 0.5em;
+      margin: 0 0 2px 0;
+    }
+
+    input,
+    button {
+      font: inherit;
+      background: #fff;
+      border: none;
+      border-radius: 0.25em;
+      line-height: 1.75;
+      padding: 0 0.5em;
+    }
+
+    input:focus,
+    textarea:focus,
+    button:focus {
+      outline: 2px solid #0bf;
+    }
+
+    input {}
+    input#input_start {}
+    input#input_months {
+      padding-right: 0;
+    }
+    
+    button {
+      cursor: pointer;
+    }
+
+    #output {
+      background: #96bfe4;
+      padding: 0.5em;
+      margin: 0 0 1em 0;
+    }
+
+    #output input {
+      display: none;
+    }
+
+    #output input:checked + label::after {
+      rotate: 180deg;
+    }
+
+    #output input:checked ~ #text_output {
+      display: block;
+    }
+    
+    #output label {
+      display: block;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    #output label::after {
+      content: '\25be';
+      display: inline-block;
+      margin-left: 0.5em;
+    }
+
+    #text_output {
+      width: 100%;
+      border: none;
+      font-family: monospace;
+      font-size: 0.8em;
+      line-height: 1.5;
+      padding: 0.5em;
+      resize: vertical;
+      margin: 0.5em 0 0 0;
+      display: block;
+      /* overflow: hidden auto; */
+      overflow: auto;
+      height: 20em;
+      word-break: break-all;
+      display: none;
+    }
+
+
+
+
     table {
-      table-layout: fixed;
+      width: 100%;
+      /* table-layout: fixed; */
       border-collapse: collapse;
       position: relative;
-      margin: 2em;
+      margin: 0;
+      background: #fff;
+      line-height: 1.5;
     }
 
     thead {
       position: sticky;
       top: 0;
-      background: #000;
-      color: #fff;
+      /* background: #000;
+      color: #fff; */
+      /* background: inherit; */
+      background: #ccc;
+      /* color: #777; */
       /* border-bottom: 1px solid; */
     }
 
     th {
       font-weight: normal;
       text-align: left;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
-    th, td {
+    th,
+    td {
       padding: 0 1em 0 0.25em;
+      white-space: nowrap;
     }
 
     td {
@@ -56,14 +169,42 @@
     tr.sunday td.weekday { font-weight: bold; }
     /* td.weekday { font-weight: bold; } */
     td.type-adventure { background: #0fb; }
-    td.type-search { background: #ff0; }
-    td.vocab { background: #9bf; }
-    td.chant { background: #dbf; }
+    /* td.type-search { background: #ff0; } */
+    /* td.vocab { background: #9bf; } */
+    /* td.chant { background: #dbf; } */
 
 
   </style>
 </head>
 <body>
+
+  <main>
+    <h1>Generator: Schedule for 'Fantastic Phonics' &amp; 'Good Morning'</h1>
+    <div id="controls">
+      <div id="inputs">
+        <label>
+          <span>Start</span>
+          <!-- <input type="date" name="input_start" id="input_start" value="2025-04-01"> -->
+          <input type="month" name="input_start" id="input_start" value="2025-04">
+        </label>
+        <label>
+          <span>for</span>
+          <input type="number" name="input_months" id="input_months" value="12" min="1" max="36">
+        </label>
+        <span>months</span>
+      </div>
+      <button id="btn_generate">Generate</button>
+    </div>
+    <div id="output">
+      <input type="checkbox" name="show_output" id="show_output">
+      <!-- <button id="btn_output">Output</button> -->
+      <!-- <p id="toggle_output">JSON Output</p> -->
+      <label for="show_output" id="toggle_output">JSON Output</label>
+      <!-- <textarea id="text_output">JSON output goes here</textarea> -->
+      <textarea id="text_output" placeholder="JSON will output here"></textarea>
+    </div>
+    <!-- <table id="schedule-table"></table> -->
+  </main>
 
 </body>
 </html>

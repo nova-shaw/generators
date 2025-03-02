@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FP/GM Gen</title>
+  <title>[Gen] FP/GM</title>
   <script src="main.js" type="module"></script>
   <style>
     
@@ -120,12 +120,10 @@
     }
 
 
-
     /*///////////// Table */
 
     table {
       width: 100%;
-      /* table-layout: fixed; */
       border-collapse: collapse;
       position: relative;
       margin: 0;
@@ -153,25 +151,11 @@
       white-space: nowrap;
     }
 
-    td {
-
-    }
-    tr {
-
-    }
     tr.sunday {
-      /* border-top: 2px solid #fff; */
       border-top: 1px solid;
     }
 
-    /* tr.sunday td.weekday { color: red; } */
-    tr.sunday td.weekday { font-weight: bold; }
-    /* td.weekday { font-weight: bold; } */
     td.type-adventure { background: #0fb; }
-    /* td.type-search { background: #ff0; } */
-    /* td.vocab { background: #9bf; } */
-    /* td.chant { background: #dbf; } */
-
 
   </style>
 </head>
@@ -179,11 +163,11 @@
 
   <main>
     <h1>Generator: Schedule for 'Fantastic Phonics' &amp; 'Good Morning'</h1>
+    
     <div id="controls">
       <div id="inputs">
         <label>
           <span>Start</span>
-          <!-- <input type="date" name="input_start" id="input_start" value="2025-04-01"> -->
           <input type="month" name="input_start" id="input_start" value="2025-04">
         </label>
         <label>
@@ -194,15 +178,25 @@
       </div>
       <button id="btn_generate">Generate</button>
     </div>
+
     <div id="output">
       <input type="checkbox" name="show_output" id="show_output">
-      <!-- <button id="btn_output">Output</button> -->
-      <!-- <p id="toggle_output">JSON Output</p> -->
       <label for="show_output" id="toggle_output">JSON Output</label>
-      <!-- <textarea id="text_output">JSON output goes here</textarea> -->
       <textarea id="text_output" placeholder="JSON will output here"></textarea>
     </div>
-    <!-- <table id="schedule-table"></table> -->
+
+    <table id="schedule-table">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Date</th>
+          <th>Vocab [<span id="count-vocab"></span>]</th>
+          <th>Chant [<span id="count-chant"></span>]</th>
+          <th>Search [<span id="count-search"></span>] Adventure [<span id="count-adventure"></span>]</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
   </main>
 
 </body>

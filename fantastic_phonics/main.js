@@ -120,12 +120,41 @@ function randomIntegerInclusive(min, max) { // Thanks https://developer.mozilla.
 }
 
 
-log(schedule);
+// log(JSON.stringify(schedule));
 
 
 //////// Output to page as a table (Aaaaaah!)
 
 const table = document.createElement('table');
+const thead = document.createElement('thead');
+const headRow = document.createElement('tr');
+
+const weekdayHead = document.createElement('th');
+weekdayHead.textContent = 'Day';
+headRow.appendChild(weekdayHead);
+
+const dateHead = document.createElement('th');
+dateHead.textContent = 'Date';
+headRow.appendChild(dateHead);
+
+const vocabHead = document.createElement('th');
+vocabHead.textContent = `Vocab [${usagi_vocab.length}]`;
+headRow.appendChild(vocabHead);
+
+const chantHead = document.createElement('th');
+chantHead.textContent = `Chant [${alphabet_chant.length}]`;
+headRow.appendChild(chantHead);
+
+const huntHead = document.createElement('th');
+huntHead.textContent = '';
+huntHead.textContent = `Search [${letter_search.length}] Adventure [${fp_adventure.length}]`;
+headRow.appendChild(huntHead);
+
+
+thead.appendChild(headRow);
+table.appendChild(thead);
+
+const tbody = document.createElement('tbody');
 
 schedule.forEach( item => {
 
@@ -169,7 +198,9 @@ schedule.forEach( item => {
 
   tr.appendChild(huntCell);
 
-  table.appendChild(tr);
+  tbody.appendChild(tr);
 });
+
+table.appendChild(tbody);
 
 document.body.appendChild(table);

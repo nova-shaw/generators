@@ -16,7 +16,6 @@
 
     button {
       font: inherit;
-      min-width: 7em;
       text-align: left;
     }
 
@@ -80,9 +79,23 @@
       flex-direction: column;
     }
 
+    #pattern-chooser button {
+      min-width: 7em;
+    }
+
     #color-chooser {
       display: flex;
       flex-direction: column;
+    }
+
+    #presets {
+      display: flex;
+      flex-direction: row;
+    }
+
+    #presets button {
+      flex: 10% 1 1;
+      text-align: center;
     }
 
     #json-output {
@@ -202,6 +215,7 @@
         </div>
         <div id="pattern-chooser"></div>
       </div>
+      <div id="presets"></div>
       <div id="output">
         <textarea id="json-output" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/></textarea>
       </div>
@@ -210,49 +224,81 @@
   </main>
   <script>
 
-    // These currently do nothing, to implement
-    const presets = [
-      {"pattern":"usagi","colors":{"color1":"#66e8ff","color2":"#f1ff8a"}},
-      {"pattern":"dots","colors":{"color1":"#c9a9f9","color2":"#f6b1f0"}},
-      {"pattern":"stars","colors":{"color1":"#9e98f0","color2":"#eff093"}},
-      {"pattern":"triangles","colors":{"color1":"#faffad","color2":"#6decfd"}},
-      {"pattern":"lines","colors":{"color1":"#668cff","color2":"#aea8ff"}},
-      {"pattern":"waves","colors":{"color1":"#a49aca","color2":"#817dba"}}
-    ];
-    
     const background = document.querySelector('#background');
     const patternDisplay = document.querySelector('#pattern-display');
     const patternChooser = document.querySelector('#pattern-chooser');
     const colorChooser = document.querySelector('#color-chooser');
     const colorPicker1 = document.querySelector('#color1');
     const colorPicker2 = document.querySelector('#color2');
+    const presetsDiv = document.querySelector('#presets');
     const jsonOutput = document.querySelector('#json-output');
+
+    // Presets with pattern and both colors
+    const presets = [
+      {"pattern":"usagi","colors":{"color1":"#66e8ff","color2":"#f1ff8a"}},
+      {"pattern":"dots","colors":{"color1":"#c9a9f9","color2":"#f6b1f0"}},
+      {"pattern":"stars","colors":{"color1":"#9e98f0","color2":"#eff093"}},
+      {"pattern":"triangles","colors":{"color1":"#faffad","color2":"#6decfd"}},
+      {"pattern":"lines","colors":{"color1":"#66ffce","color2":"#aea8ff"}},
+      {"pattern":"waves","colors":{"color1":"#a49aca","color2":"#817dba"}}
+    ];
+    
+    presets.forEach( (p, i) => {
+      const button = document.createElement('button');
+      button.textContent = i + 1;
+      button.addEventListener('click', e => {
+        setAll(presets[i]);
+      });
+      presetsDiv.appendChild(button);
+    })
+
+    function setAll(json) {
+      setPattern(json.pattern);
+      colorPicker1.value = json.colors.color1;
+      colorPicker2.value = json.colors.color2;
+      setColor(`pattern-color1`, json.colors.color1);
+      setColor(`pattern-color2`, json.colors.color2);
+      // Loop might be better later so the number of colors isn't limited to 2
+      /*for (const [key, value] of Object.entries(json.colors)) {
+        setColor(`pattern-${key}`, value);
+      }*/
+    }
+
 
     const allPatterns = document.querySelectorAll('pattern');
     const frag = document.createDocumentFragment();
     allPatterns.forEach(elm => {
+      
       const btn = document.createElement('button');
-      const patternID = elm.id.replace('pattern-','');
-      btn.dataset.pattern = patternID;
-      btn.textContent = patternID;
-      btn.addEventListener('click', setPattern);
+      btn.textContent = btn.dataset.pattern = elm.id.replace('pattern-','');
+
+      btn.addEventListener('click', e => {
+        setPattern(e.currentTarget.dataset.pattern);
+      });
+
       frag.appendChild(btn);
     })
     patternChooser.appendChild(frag);
 
-    function setPattern(e) {
-      const button = e.currentTarget;
-      patternDisplay.setAttribute('fill', `url(#pattern-${button.dataset.pattern})`);
-      patternDisplay.dataset.pattern = button.dataset.pattern;
+    function setPattern(patternName) {
+      patternDisplay.setAttribute('fill', `url(#pattern-${patternName})`);
+      patternDisplay.dataset.pattern = patternName;
       updateOutput();
     }
 
-    colorPicker1.addEventListener('input', setColor);
-    colorPicker2.addEventListener('input', setColor);
+    colorPicker1.addEventListener('input', setColorFromPicker);
+    colorPicker2.addEventListener('input', setColorFromPicker);
 
-    function setColor(e) {
+    function setColorFromPicker(e) {
       const picker = e.currentTarget;
-      background.style.setProperty(`--${picker.name}`, picker.value);
+      const colorName = picker.name;
+      const colorValue = picker.value;
+      setColor(colorName, colorValue);
+    }
+
+    function setColor(colorName, colorValue) {
+      // const picker = e.currentTarget;
+      background.style.setProperty(`--${colorName}`, colorValue);
       updateOutput();
     }
 
@@ -280,9 +326,6 @@
     }
 
     updateOutput();
-
-    console.log(document)
-    console.dir(document)
 
   </script>
 </body>

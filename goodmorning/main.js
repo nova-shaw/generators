@@ -57,6 +57,7 @@ function generateSchedule() {
     shape: [],
     today: [],
     trans: [],
+    time:  [],
     story: [],
     gdbye: []
   }
@@ -71,11 +72,12 @@ function generateSchedule() {
       weekday: date.getDay(),
       color: null,
       song:  null,
-      exerc: null, //// subroutine
+      exerc: null, //// [subroutine]
       shape: null,
-      today: null, //// subroutine
+      today: null, //// [subroutine]
       trans: null,
-      story: null, //// subroutine
+      time:  null, //// generate random time between 1:00 and 12:55 (5-minute intervals)
+      story: null, //// once a story is chosen, loop that story until finished
       gdbye: null
     };
 
@@ -96,9 +98,11 @@ function generateSchedule() {
     day.shape = window_shapes[shapeIndex];
     day.today = todays_lesson[todayIndex];
     day.trans = trans_phonics[transIndex];
+    day.time  = `${randomIntegerInclusive(1,12)}:${String(randomIntegerInclusive(1,11) * 5).padStart(2, '0')}`
     day.story = stories[storyIndex];
     day.gdbye = goodbyes[gdbyeIndex];
 
+    log(day.story);
 
     // Add current day to end of the schedule array
     schedule.push(day);
@@ -225,6 +229,11 @@ function outputSchedule(schedule) {
     transCell.classList.add('trans');
     transCell.textContent = `${item.trans}`;
     tr.appendChild(transCell);
+
+    const timeCell = document.createElement('td');
+    timeCell.classList.add('time');
+    timeCell.textContent = `${item.time}`;
+    tr.appendChild(timeCell);
 
     const storyCell = document.createElement('td');
     storyCell.classList.add('story');

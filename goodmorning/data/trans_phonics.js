@@ -1,4 +1,4 @@
-export const transition_phonics = [
+export const trans_phonics = [
   'dsm',
   'ftm',
   'krm',

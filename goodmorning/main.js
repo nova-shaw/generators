@@ -3,7 +3,7 @@ import { hello_songs } from './data/hello_songs.js'; // 4 items
 import { lets_exercise } from './data/lets_exercise.js'; // 5 items
 import { window_shapes } from './data/window_shapes.js'; // 4 items
 import { todays_lesson } from './data/todays_lesson.js'; // 7 categories (between 2 and 23 items each)
-import { transition_phonics } from './data/transition_phonics.js'; // 5 items
+import { trans_phonics } from './data/trans_phonics.js'; // 5 items
 // Clock thing - What time is it?
 import { stories } from './data/stories.js'; // 9 series (between 5 and 11 episodes each)
 import { goodbyes } from './data/goodbyes.js'; // 3 items
@@ -16,7 +16,7 @@ log('hello_songs', hello_songs); // song
 log('lets_exercise', lets_exercise); // exerc
 log('window_shapes', window_shapes); // shape
 log('todays_lesson', todays_lesson); // today
-log('transition_phonics', transition_phonics); // trans
+log('trans_phonics', trans_phonics); // trans
 log('stories', stories); // story
 log('goodbyes', goodbyes); // goodbye
 
@@ -52,7 +52,7 @@ function generateSchedule() {
   // Arrays to keep track of what *indexes* have been previously chosen (to avoid nearby repeats)
   const used = {
     color: [],
-    song: [],
+    songs: [],
     exerc: [],
     shape: [],
     today: [],
@@ -70,22 +70,34 @@ function generateSchedule() {
       epoch: date.getTime(), //// Also store date as Unix epoch just in case
       weekday: date.getDay(),
       color: null,
-      song: null,
+      songs: null,
       exerc: null,
       shape: null,
       today: null,
       trans: null,
       story: null,
-      goodbye: null
+      gdbye: null
     };
 
     // Choose a random index for the source arrays that are always needed
-    const colorIndex = chooseIndex(door_colors,    used.color, 30);
-    const chantIndex = chooseIndex(alphabet_chant, used.chant, 2);
+    const colorIndex  = chooseIndex(door_colors,   used.color, 3);
+    const songsIndex  = chooseIndex(hello_songs,   used.songs, 2);
+    const exercIndex  = chooseIndex(lets_exercise, used.exerc, 2);
+    const shapeIndex  = chooseIndex(window_shapes, used.shape, 2);
+    const todayIndex  = chooseIndex(todays_lesson, used.today, 3);
+    const transIndex  = chooseIndex(trans_phonics, used.trans, 3);
+    const storyIndex  = chooseIndex(stories,       used.story, 6);
+    const gdbyeIndex  = chooseIndex(goodbyes,      used.gdbye, 2);
 
     // Use those indexes to pull in the actual data for current day (and set the date)
-    day.vocab = usagi_vocab[vocabIndex];
-    day.chant = alphabet_chant[chantIndex];
+    day.color = door_colors[colorIndex];
+    day.songs = hello_songs[songsIndex];
+    day.exerc = lets_exercise[exercIndex];
+    day.shape = window_shapes[shapeIndex];
+    day.today = todays_lesson[todayIndex];
+    day.trans = trans_phonics[transIndex];
+    day.story = stories[storyIndex];
+    day.gdbye = goodbyes[gdbyeIndex];
 
 
     // Add current day to end of the schedule array

@@ -10,7 +10,7 @@ import { goodbyes } from './data/goodbyes.js'; // 3 items
 
 
 const log = console.log;
-
+/*
 log('door_colors', door_colors); // color
 log('hello_songs', hello_songs); // song
 log('lets_exercise', lets_exercise); // exerc
@@ -19,7 +19,7 @@ log('todays_lesson', todays_lesson); // today
 log('trans_phonics', trans_phonics); // trans
 log('stories', stories); // story
 log('goodbyes', goodbyes); // goodbye
-
+*/
 
 //////// Interface
 
@@ -52,13 +52,13 @@ function generateSchedule() {
   // Arrays to keep track of what *indexes* have been previously chosen (to avoid nearby repeats)
   const used = {
     color: [],
-    songs: [],
+    song:  [],
     exerc: [],
     shape: [],
     today: [],
     trans: [],
     story: [],
-    goodbye: []
+    gdbye: []
   }
 
   // Loop through every day between `date` and `endDate`, incrementing `date` each loop
@@ -70,28 +70,28 @@ function generateSchedule() {
       epoch: date.getTime(), //// Also store date as Unix epoch just in case
       weekday: date.getDay(),
       color: null,
-      songs: null,
-      exerc: null,
+      song:  null,
+      exerc: null, //// subroutine
       shape: null,
-      today: null,
+      today: null, //// subroutine
       trans: null,
-      story: null,
+      story: null, //// subroutine
       gdbye: null
     };
 
     // Choose a random index for the source arrays that are always needed
-    const colorIndex  = chooseIndex(door_colors,   used.color, 3);
-    const songsIndex  = chooseIndex(hello_songs,   used.songs, 2);
-    const exercIndex  = chooseIndex(lets_exercise, used.exerc, 2);
-    const shapeIndex  = chooseIndex(window_shapes, used.shape, 2);
-    const todayIndex  = chooseIndex(todays_lesson, used.today, 3);
-    const transIndex  = chooseIndex(trans_phonics, used.trans, 3);
-    const storyIndex  = chooseIndex(stories,       used.story, 6);
-    const gdbyeIndex  = chooseIndex(goodbyes,      used.gdbye, 2);
+    const colorIndex = chooseIndex(door_colors,   used.color, 3);
+    const songIndex  = chooseIndex(hello_songs,   used.song,  2);
+    const exercIndex = chooseIndex(lets_exercise, used.exerc, 2);
+    const shapeIndex = chooseIndex(window_shapes, used.shape, 2);
+    const todayIndex = chooseIndex(todays_lesson, used.today, 3);
+    const transIndex = chooseIndex(trans_phonics, used.trans, 3);
+    const storyIndex = chooseIndex(stories,       used.story, 6);
+    const gdbyeIndex = chooseIndex(goodbyes,      used.gdbye, 2);
 
     // Use those indexes to pull in the actual data for current day (and set the date)
     day.color = door_colors[colorIndex];
-    day.songs = hello_songs[songsIndex];
+    day.song  = hello_songs[songIndex];
     day.exerc = lets_exercise[exercIndex];
     day.shape = window_shapes[shapeIndex];
     day.today = todays_lesson[todayIndex];
@@ -109,6 +109,8 @@ function generateSchedule() {
 
   // When done, send to output function
   outputSchedule(schedule);
+
+  log(schedule);
 }
 
 
@@ -142,4 +144,102 @@ function randomIntegerInclusive(min, max) { // Thanks https://developer.mozilla.
   const minCeiled = Math.ceil(min);
   const maxFloored = Math.floor(max);
   return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive
+}
+
+
+
+//////// Schedule output (to existing table)
+
+function outputSchedule(schedule) {
+  
+  // First, spit out the JSON to the UI
+  const codeOutput = document.querySelector('#text_output');
+  codeOutput.value = JSON.stringify(schedule);
+
+  // Then report the number of choices in each source array
+  const countColor = document.querySelector('#count-color');
+  const countHello = document.querySelector('#count-hello');
+  const countExerc = document.querySelector('#count-exerc');
+  const countShape = document.querySelector('#count-shape');
+  const countToday = document.querySelector('#count-today');
+  const countTrans = document.querySelector('#count-trans');
+  const countStory = document.querySelector('#count-story');
+  const countGdbye = document.querySelector('#count-gdbye');
+  countColor.textContent = door_colors.length;
+  countHello.textContent = hello_songs.length;
+  countExerc.textContent = lets_exercise.length;
+  countShape.textContent = window_shapes.length;
+  countToday.textContent = todays_lesson.length;
+  countTrans.textContent = trans_phonics.length;
+  countStory.textContent = stories.length;
+  countGdbye.textContent = goodbyes.length;
+
+
+  // Finally, begin building the new table (tbody only)
+  const tbody = document.createElement('tbody');
+  schedule.forEach( item => {
+
+    const date = new Date(item.date);
+
+    const tr = document.createElement('tr');
+    tr.classList.toggle('sunday', date.getDay() === 0);
+
+    const weekdayCell = document.createElement('td');
+    weekdayCell.classList.add('weekday');
+    weekdayCell.textContent = date.toLocaleString('default', {  weekday: 'short' });
+    tr.appendChild(weekdayCell);
+
+    const dateCell = document.createElement('td');
+    dateCell.classList.add('date');
+    const month = date.toLocaleString('default', { month: 'short' });
+    dateCell.textContent = `${date.getFullYear()} ${month} ${date.getDate()}`;
+    tr.appendChild(dateCell);
+
+
+    const colorCell = document.createElement('td');
+    colorCell.classList.add('color');
+    colorCell.textContent = `${item.color}`;
+    tr.appendChild(colorCell);
+
+    const songCell = document.createElement('td');
+    songCell.classList.add('song');
+    songCell.textContent = `${item.song}`;
+    tr.appendChild(songCell);
+
+    const exercCell = document.createElement('td');
+    exercCell.classList.add('exerc');
+    exercCell.textContent = `${item.exerc.file}`;
+    tr.appendChild(exercCell);
+
+    const shapeCell = document.createElement('td');
+    shapeCell.classList.add('shape');
+    shapeCell.textContent = `${item.shape}`;
+    tr.appendChild(shapeCell);
+
+    const todayCell = document.createElement('td');
+    todayCell.classList.add('today');
+    todayCell.textContent = `${item.today.title}`;
+    tr.appendChild(todayCell);
+
+    const transCell = document.createElement('td');
+    transCell.classList.add('trans');
+    transCell.textContent = `${item.trans}`;
+    tr.appendChild(transCell);
+
+    const storyCell = document.createElement('td');
+    storyCell.classList.add('story');
+    storyCell.textContent = `${item.story.title}`;
+    tr.appendChild(storyCell);
+
+    const gdbyeCell = document.createElement('td');
+    gdbyeCell.classList.add('gdbye');
+    gdbyeCell.textContent = `${item.gdbye}`;
+    tr.appendChild(gdbyeCell);
+
+    tbody.appendChild(tr);
+  });
+  
+  // Once new tbody is built, replace the existing tbody with it
+  const tbodyExisting = document.querySelector('#schedule-table tbody');
+  tbodyExisting.replaceWith(tbody);
 }

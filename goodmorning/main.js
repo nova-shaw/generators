@@ -7,28 +7,12 @@ import { trans_phonics } from './data/trans_phonics.js';
 import { stories } from './data/stories.js';
 import { goodbyes } from './data/goodbyes.js';
 
-
-const log = console.log;
-/*
-log('door_colors', door_colors); // color
-log('hello_songs', hello_songs); // song
-log('lets_exercise', lets_exercise); // exerc
-log('window_shapes', window_shapes); // shape
-log('todays_lesson', todays_lesson); // today
-log('trans_phonics', trans_phonics); // trans
-log('stories', stories); // story
-log('goodbyes', goodbyes); // goodbye
-*/
+// const log = console.log;
 
 //////// Interface
 
 const btnGenerate = document.querySelector('#btn_generate');
 btnGenerate.addEventListener('click', generateSchedule);
-
-
-// const timesUsed = [];
-// const currentStory = { index: null, part: 1, data: null };
-// const usedStories = [];
 
 
 //////// Run on page load
@@ -53,28 +37,27 @@ function generateSchedule() {
   // Init blank schedule
   const schedule = [];
 
+
+
   // Arrays to keep track of what *indexes* have been previously chosen (to avoid nearby repeats)
   const used = {
-    color: [], // indexes
-    song:  [], // indexes
-    exerc: [], // 
-    shape: [], // indexes
+    color: [],
+    song:  [],
+    exerc: [],
+    shape: [],
     today: {
       groups: [],
       lessons: Array(todays_lesson.length).fill([])
     },
-    // todayCats: Array(todays_lesson.length),
-    // todayCats: Array(todays_lesson.length).fill([]),
-    trans: [], // indexes
-    time:  [], // time strings
+    trans: [],
+    time:  [],
     story: [],
     gdbye: []
   }
 
+  // Keep track of current story between day loops
   let currentStory = null;
 
-  // Story has n episodes: once chosen, must run sequentially until finished
-  // const currentStory = { index: null, episode: null }
 
   // Loop through every day between `date` and `endDate`, incrementing `date` each loop
   while (date < endDate) {
@@ -119,9 +102,7 @@ function generateSchedule() {
     const songIndex  = chooseIndex(hello_songs,   used.song,  2); // 4 items
     const exercIndex = chooseIndex(lets_exercise, used.exerc, 40); // 45 items
     const shapeIndex = chooseIndex(window_shapes, used.shape, 1); // 4 items
-    // const todayIndex = chooseIndex(todays_lesson, used.today, 3); // 8 groups (between 2 and 23 items each)
     const transIndex = chooseIndex(trans_phonics, used.trans, 3); // 5 items
-    // const storyIndex = chooseIndex(stories,       used.story, 6);  // 9 items (between 5 and 11 episodes each)
     const gdbyeIndex = chooseIndex(goodbyes,      used.gdbye, 2); // 3 items
 
     // Use those indexes to pull in the actual data for current day (and set the date)
@@ -129,41 +110,30 @@ function generateSchedule() {
     day.song  = hello_songs[songIndex];
     day.exerc = lets_exercise[exercIndex];
     day.shape = window_shapes[shapeIndex];
-    // day.today = todays_lesson[todayIndex];
     day.trans = trans_phonics[transIndex];
-    // day.time  = `${randomIntegerInclusive(1,12)}:${String(randomIntegerInclusive(1,11) * 5).padStart(2, '0')}`;
-    // day.time  = timeChooseExclude();
-    // day.story = chooseStory();
     day.gdbye = goodbyes[gdbyeIndex];
 
+    /*const spliceMap = [
+      1: 0,
+      2: 1,
+      3: 2,
+      4: 3,
+      5: 3
+    ]*/
 
     //// Special case: Today [today]
-
-    // log(used.today);
-    const todayGroupIndex = chooseIndex(todays_lesson, used.today.groups, 2);
+    const todayGroupIndex = chooseIndex(todays_lesson, used.today.groups, 7);
     const todayGroup = todays_lesson[todayGroupIndex];
     const todayChoices = todayGroup.choices;
-    // const todayLessonArray = todays_lesson[todayGroupIndex].choices;
-    log(todayGroup);
-    // const todayLessonIndex = chooseIndex(todayLessonArray, used.today.lessons[todayGroupIndex], todayLessonArray.length - Math.floor(todayLessonArray.length * 0.3));
-    const spliceWhenFull = todayChoices.length < 4 ? 1 : todayChoices.length - Math.floor(todayChoices.length * 0.8);
-    // const spliceWhenFull = todayLessonArray.length < 4 ? Math.floor(todayLessonArray.length/2) : todayLessonArray.length - Math.floor(todayLessonArray.length * 0.8);
-    // log(todayLessonArray.length, '-', spliceWhenFull, '=', todayLessonArray.length - spliceWhenFull);
-    // const todayLessonIndex = chooseIndex(todayLessonArray, used.today.lessons[todayGroupIndex], todayLessonArray.length);
+    const spliceWhenFull = todayChoices.length < 6 ? todayChoices.length-1 : todayChoices.length - Math.floor(todayChoices.length * 0.8);
     const todayLessonIndex = chooseIndex(todayChoices, used.today.lessons[todayGroupIndex], spliceWhenFull);
-    // log(todayLessonIndex);
-    // log(todayLessonArray[todayLessonIndex]);
-    // day.today = todayLessonArray[todayLessonIndex];
     day.today = {
       group: todayGroup.group,
       lesson: todayChoices[todayLessonIndex]
     };
 
 
-
-
     //// Special case: Time [time]
-
     while (day.time === null) {
       // generate a random time string (5min intervals)
       const randomTime = `${String(randomIntegerInclusive(1,12)).padStart(2, '0')}:${String(randomIntegerInclusive(0,11) * 5).padStart(2, '0')}`;
@@ -176,7 +146,6 @@ function generateSchedule() {
     }
 
     //// Special case: Story [story]
-
     if (currentStory === null || currentStory.part == currentStory.data.parts) { // just started (null) or reached the end of current story episodes
       // choose new story (excluding previously used)
       const storyIndex = chooseIndex(stories, used.story, 4);
@@ -189,7 +158,10 @@ function generateSchedule() {
       // increment episode
       currentStory.part++;
     }
-    day.story = { slug: currentStory.data.slug, part: currentStory.part }
+    day.story = {
+      slug: currentStory.data.slug,
+      part: currentStory.part
+    };
 
 
     // Add current day to end of the schedule array
@@ -202,68 +174,19 @@ function generateSchedule() {
   // When done, send to output function
   outputSchedule(schedule);
 
-  log(schedule);
+  // log(schedule);
 }
+
 
 
 //////// Schedule creation HELPERS
 
-/*function timeChooseExclude(rememberHowMany = 10, numberToSpliceWhenFull = 1) {
-  let chosen = null;
-  while (chosen === null) {
-    // const randomTime = `${randomIntegerInclusive(1,12)}:${String(randomIntegerInclusive(1,11) * 5).padStart(2, '0')}`;
-    const randomTime = `${String(randomIntegerInclusive(1,12)).padStart(2, '0')}:${String(randomIntegerInclusive(1,11) * 5).padStart(2, '0')}`;
-    if (timesUsed.indexOf(randomTime) === -1) chosen = randomTime;
-  }
-  timesUsed.push(chosen);
-  if (timesUsed.length >= rememberHowMany) {
-    timesUsed.splice(0, numberToSpliceWhenFull);
-  }
-  // log(timesUsed);
-  return chosen;
-}
-
-function chooseStory() {
-  // log(currentStory);
-  // log(usedStories);
-
-  // if (currentStory.index == null || currentStory.part < currentStory.data.parts) {
-  if (currentStory.data == null || currentStory.part == currentStory.data.parts) {
-  // if (currentStory.data == null || currentStory.part < currentStory.data.parts) {
-    // log(currentStory.part < currentStory.data?.parts);
-  // if (currentStory.part < currentStory.data.parts) {
-    // log('NEW!');
-    // choose new story
-    const storyIndex = chooseIndex(stories, usedStories, 4);
-    currentStory.index = storyIndex;
-    currentStory.part = 1;
-    currentStory.data = stories[storyIndex];
-  } else {
-    // increment episode
-    currentStory.part++;
-  }
-  return { slug: currentStory.data.slug, part: currentStory.part }
-}
-
-function newStory() {
-
-}
-*/
-
-
 function chooseIndex(sourceArray, usedArray, numberToSpliceWhenFull) {
-  // log(usedArray);
-  // log(numberToSpliceWhenFull, sourceArray.length, sourceArray, usedArray.length);
 
   // If all [sourceArray] items have been previously chosen, remove the oldest [n] from front of [usedArray] with `splice()`
-  // const usedMax = usedArray.length - Math.floor(usedArray.length * 0.5);
-  // log(sourceArray.length, usedMax);
-  // if (usedArray.length == usedMax) {
   if (usedArray.length >= sourceArray.length) {
     usedArray.splice(0, numberToSpliceWhenFull);
   }
-
-  // log('source', sourceArray.length, '/ used', usedArray.length);
 
   // Choose a random index while excluding those previously chosen
   const chosen = randomIndexExclude(sourceArray, usedArray);
@@ -274,23 +197,6 @@ function chooseIndex(sourceArray, usedArray, numberToSpliceWhenFull) {
   // Return chosen index
   return chosen;
 }
-/*
-/// Testing STRING excludes
-const used    = [ 'hi', 'there', 'are', 'you', 'ok'];
-const choices = [ 'there', 'you', 'go', 'thinking', 'again'];
-// log(choices[randomIndexExclude(choices, used)]);
-log(randomStringExclude(choices, used));
-*/
-
-/*function randomStringExclude(array, excludeArray) {
-  let chosen = null;
-  while (chosen === null) {
-    const randomIndex = randomIntegerInclusive(0, array.length - 1);
-    const candidate = array[randomIndex];
-    if (excludeArray.indexOf(candidate) === -1) chosen = candidate;
-  }
-  return chosen;
-}*/
 
 function randomIndexExclude(array, excludeArray) {
   let chosen = null;
@@ -298,8 +204,13 @@ function randomIndexExclude(array, excludeArray) {
   while (chosen === null) {
     iterations++;
     const candidate = randomIntegerInclusive(0, array.length - 1);
-    if (excludeArray.indexOf(candidate) === -1) chosen = candidate;
-    if (iterations > 100) { console.warn('max iterations', array); chosen = candidate; }
+    if (excludeArray.indexOf(candidate) === -1) { //// Once the candidate is NOT found in the exclude list, choose it and exit
+      chosen = candidate;
+    }
+    if (iterations > 100) { //// Safety: just in case we're stuck in recursion, force exit after so many iterations
+      console.warn('max iterations', array);
+      chosen = candidate;
+    }
   }
   return chosen;
 }
@@ -337,7 +248,6 @@ function outputSchedule(schedule) {
   countTrans.textContent = trans_phonics.length;
   countStory.textContent = stories.length;
   countGdbye.textContent = goodbyes.length;
-
 
   // Finally, begin building the new table (tbody only)
   const tbody = document.createElement('tbody');

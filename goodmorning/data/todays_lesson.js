@@ -1,15 +1,15 @@
 export const todays_lesson = [
-  { title: `HowRU`, choices: [
+  { group: `HowRU`, choices: [
     `HowAreYou`,
     `HowOldAreYou`,
     `WhensYourBirthday`
   ]},
-  { title: `Weather`, choices: [
+  { group: `Weather`, choices: [
     `HowsTheWeather-Fukuoka`,
     `HowsTheWeather-Kanazawa`,
     `HowsTheWeather-Shizuoka`
   ]},
-  { title: `Like`, choices: [
+  { group: `Like`, choices: [
     `ILikeActions`,
     `ILikeAnimals`,
     `ILikeColors`,
@@ -17,7 +17,7 @@ export const todays_lesson = [
     `ILikefood`,
     `ILikefruit`
   ]},
-  { title: `LetsSing`, choices: [
+  { group: `LetsSing`, choices: [
     `lets-sing-head-shoulders`,
     `lets-sing-head-shoulders-2`,
     `lets-sing-hokey-pokey`,
@@ -25,7 +25,7 @@ export const todays_lesson = [
     `lets-sing-if-you-re-happy`,
     `lets-sing-if-you-re-happy-2`
   ]},
-  { title: `NumberThief`, choices: [
+  { group: `NumberThief`, choices: [
     `NumberThief - 01`,
     `NumberThief - 02`,
     `NumberThief - 03`,
@@ -36,13 +36,13 @@ export const todays_lesson = [
     `NumberThief - 08`,
     `NumberThief - 09`
   ]},
-  { title: `NurseryRhymes`, choices: [
+  { group: `NurseryRhymes`, choices: [
     `NurseryRhymes - Grand Old Duke Of York`,
     `NurseryRhymes - Hickory Dickory`,
     `NurseryRhymes - Humpty Dumpty`,
     `NurseryRhymes - Itsy Bitsy Spider`
   ]},
-  { title: `Science`, choices: [
+  { group: `Science`, choices: [
     `Science-Colors - green`,
     `Science-FloatOrSink - block`,
     `Science-FloatOrSink - button`,
@@ -67,7 +67,7 @@ export const todays_lesson = [
     `Science-WhatIsIt - tennisracket`,
     `Science-WhatIsIt - trumpet`
   ]},
-  { title: `LetterThief`, choices: [
+  { group: `LetterThief`, choices: [
     `LetterThief - H`,
     `LetterThief - S`
   ]}

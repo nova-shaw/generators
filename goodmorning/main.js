@@ -1,12 +1,11 @@
-import { door_colors } from './data/door_colors.js'; // 7 items
-import { hello_songs } from './data/hello_songs.js'; // 4 items
-import { lets_exercise } from './data/lets_exercise.js'; // 5 items
-import { window_shapes } from './data/window_shapes.js'; // 4 items
-import { todays_lesson } from './data/todays_lesson.js'; // 7 categories (between 2 and 23 items each)
-import { trans_phonics } from './data/trans_phonics.js'; // 5 items
-// Clock thing - What time is it?
-import { stories } from './data/stories.js'; // 9 series (between 5 and 11 episodes each)
-import { goodbyes } from './data/goodbyes.js'; // 3 items
+import { door_colors } from './data/door_colors.js';
+import { hello_songs } from './data/hello_songs.js';
+import { lets_exercise } from './data/lets_exercise.js';
+import { window_shapes } from './data/window_shapes.js';
+import { todays_lesson } from './data/todays_lesson.js';
+import { trans_phonics } from './data/trans_phonics.js';
+import { stories } from './data/stories.js';
+import { goodbyes } from './data/goodbyes.js';
 
 
 const log = console.log;
@@ -27,9 +26,9 @@ const btnGenerate = document.querySelector('#btn_generate');
 btnGenerate.addEventListener('click', generateSchedule);
 
 
-const timesUsed = [];
-const currentStory = { index: null, part: 1, data: null };
-const usedStories = [];
+// const timesUsed = [];
+// const currentStory = { index: null, part: 1, data: null };
+// const usedStories = [];
 
 
 //////// Run on page load
@@ -60,12 +59,19 @@ function generateSchedule() {
     song:  [], // indexes
     exerc: [], // 
     shape: [], // indexes
-    today: [],
+    today: {
+      groups: [],
+      lessons: Array(todays_lesson.length).fill([])
+    },
+    // todayCats: Array(todays_lesson.length),
+    // todayCats: Array(todays_lesson.length).fill([]),
     trans: [], // indexes
     time:  [], // time strings
     story: [],
     gdbye: []
   }
+
+  let currentStory = null;
 
   // Story has n episodes: once chosen, must run sequentially until finished
   // const currentStory = { index: null, episode: null }
@@ -90,6 +96,7 @@ function generateSchedule() {
       gdbye: null
     };
 
+
     /**
      * Total of 9 sections:
      * 
@@ -108,14 +115,14 @@ function generateSchedule() {
     */
 
     // Choose a random index for the source arrays that are always needed
-    const colorIndex = chooseIndex(door_colors,   used.color, 3);
-    const songIndex  = chooseIndex(hello_songs,   used.song,  2);
-    const exercIndex = chooseIndex(lets_exercise, used.exerc, 18);
-    const shapeIndex = chooseIndex(window_shapes, used.shape, 2);
-    // const todayIndex = chooseIndex(todays_lesson, used.today, 3);
-    const transIndex = chooseIndex(trans_phonics, used.trans, 3);
-    // const storyIndex = chooseIndex(stories,       used.story, 6);
-    const gdbyeIndex = chooseIndex(goodbyes,      used.gdbye, 2);
+    const colorIndex = chooseIndex(door_colors,   used.color, 3); // 7 items
+    const songIndex  = chooseIndex(hello_songs,   used.song,  2); // 4 items
+    const exercIndex = chooseIndex(lets_exercise, used.exerc, 40); // 45 items
+    const shapeIndex = chooseIndex(window_shapes, used.shape, 1); // 4 items
+    // const todayIndex = chooseIndex(todays_lesson, used.today, 3); // 8 groups (between 2 and 23 items each)
+    const transIndex = chooseIndex(trans_phonics, used.trans, 3); // 5 items
+    // const storyIndex = chooseIndex(stories,       used.story, 6);  // 9 items (between 5 and 11 episodes each)
+    const gdbyeIndex = chooseIndex(goodbyes,      used.gdbye, 2); // 3 items
 
     // Use those indexes to pull in the actual data for current day (and set the date)
     day.color = door_colors[colorIndex];
@@ -125,22 +132,65 @@ function generateSchedule() {
     // day.today = todays_lesson[todayIndex];
     day.trans = trans_phonics[transIndex];
     // day.time  = `${randomIntegerInclusive(1,12)}:${String(randomIntegerInclusive(1,11) * 5).padStart(2, '0')}`;
-    day.time  = timeChooseExclude();
-    day.story = chooseStory();
+    // day.time  = timeChooseExclude();
+    // day.story = chooseStory();
     day.gdbye = goodbyes[gdbyeIndex];
 
-    // Special case: Today [today]
 
-    // Special case: Time [time]
-    // const timeString = chooseIndex(trans_phonics, used.trans, 3);
-    // const timeString = `${randomIntegerInclusive(1,12)}:${String(randomIntegerInclusive(1,11) * 5).padStart(2, '0')}`;
+    //// Special case: Today [today]
 
-    // Special case: Story [story]
+    // log(used.today);
+    const todayGroupIndex = chooseIndex(todays_lesson, used.today.groups, 2);
+    const todayGroup = todays_lesson[todayGroupIndex];
+    const todayChoices = todayGroup.choices;
+    // const todayLessonArray = todays_lesson[todayGroupIndex].choices;
+    log(todayGroup);
+    // const todayLessonIndex = chooseIndex(todayLessonArray, used.today.lessons[todayGroupIndex], todayLessonArray.length - Math.floor(todayLessonArray.length * 0.3));
+    const spliceWhenFull = todayChoices.length < 4 ? 1 : todayChoices.length - Math.floor(todayChoices.length * 0.8);
+    // const spliceWhenFull = todayLessonArray.length < 4 ? Math.floor(todayLessonArray.length/2) : todayLessonArray.length - Math.floor(todayLessonArray.length * 0.8);
+    // log(todayLessonArray.length, '-', spliceWhenFull, '=', todayLessonArray.length - spliceWhenFull);
+    // const todayLessonIndex = chooseIndex(todayLessonArray, used.today.lessons[todayGroupIndex], todayLessonArray.length);
+    const todayLessonIndex = chooseIndex(todayChoices, used.today.lessons[todayGroupIndex], spliceWhenFull);
+    // log(todayLessonIndex);
+    // log(todayLessonArray[todayLessonIndex]);
+    // day.today = todayLessonArray[todayLessonIndex];
+    day.today = {
+      group: todayGroup.group,
+      lesson: todayChoices[todayLessonIndex]
+    };
 
 
 
 
-    // log(day.story);
+    //// Special case: Time [time]
+
+    while (day.time === null) {
+      // generate a random time string (5min intervals)
+      const randomTime = `${String(randomIntegerInclusive(1,12)).padStart(2, '0')}:${String(randomIntegerInclusive(0,11) * 5).padStart(2, '0')}`;
+      // if it's not in the `used` list, accept and exit while loop, otherwise generate another
+      if (used.time.indexOf(randomTime) === -1) {
+        used.time.push(randomTime);
+        if (used.time.length > 10) { used.time.splice(0, 1); } // max 'memory' length is 10 - remove one if we go over this
+        day.time = randomTime;
+      }
+    }
+
+    //// Special case: Story [story]
+
+    if (currentStory === null || currentStory.part == currentStory.data.parts) { // just started (null) or reached the end of current story episodes
+      // choose new story (excluding previously used)
+      const storyIndex = chooseIndex(stories, used.story, 4);
+      currentStory = {
+        index: storyIndex,
+        part: 1,
+        data: stories[storyIndex]
+      }
+    } else {
+      // increment episode
+      currentStory.part++;
+    }
+    day.story = { slug: currentStory.data.slug, part: currentStory.part }
+
 
     // Add current day to end of the schedule array
     schedule.push(day);
@@ -158,7 +208,7 @@ function generateSchedule() {
 
 //////// Schedule creation HELPERS
 
-function timeChooseExclude(rememberHowMany = 10, numberToSpliceWhenFull = 1) {
+/*function timeChooseExclude(rememberHowMany = 10, numberToSpliceWhenFull = 1) {
   let chosen = null;
   while (chosen === null) {
     // const randomTime = `${randomIntegerInclusive(1,12)}:${String(randomIntegerInclusive(1,11) * 5).padStart(2, '0')}`;
@@ -173,17 +223,16 @@ function timeChooseExclude(rememberHowMany = 10, numberToSpliceWhenFull = 1) {
   return chosen;
 }
 
-
 function chooseStory() {
-  log(currentStory);
-  log(usedStories);
+  // log(currentStory);
+  // log(usedStories);
 
   // if (currentStory.index == null || currentStory.part < currentStory.data.parts) {
   if (currentStory.data == null || currentStory.part == currentStory.data.parts) {
   // if (currentStory.data == null || currentStory.part < currentStory.data.parts) {
     // log(currentStory.part < currentStory.data?.parts);
   // if (currentStory.part < currentStory.data.parts) {
-    log('NEW!');
+    // log('NEW!');
     // choose new story
     const storyIndex = chooseIndex(stories, usedStories, 4);
     currentStory.index = storyIndex;
@@ -199,13 +248,22 @@ function chooseStory() {
 function newStory() {
 
 }
-
+*/
 
 
 function chooseIndex(sourceArray, usedArray, numberToSpliceWhenFull) {
+  // log(usedArray);
+  // log(numberToSpliceWhenFull, sourceArray.length, sourceArray, usedArray.length);
 
   // If all [sourceArray] items have been previously chosen, remove the oldest [n] from front of [usedArray] with `splice()`
-  if (usedArray.length >= sourceArray.length) usedArray.splice(0, numberToSpliceWhenFull);
+  // const usedMax = usedArray.length - Math.floor(usedArray.length * 0.5);
+  // log(sourceArray.length, usedMax);
+  // if (usedArray.length == usedMax) {
+  if (usedArray.length >= sourceArray.length) {
+    usedArray.splice(0, numberToSpliceWhenFull);
+  }
+
+  // log('source', sourceArray.length, '/ used', usedArray.length);
 
   // Choose a random index while excluding those previously chosen
   const chosen = randomIndexExclude(sourceArray, usedArray);
@@ -224,7 +282,7 @@ const choices = [ 'there', 'you', 'go', 'thinking', 'again'];
 log(randomStringExclude(choices, used));
 */
 
-function randomStringExclude(array, excludeArray) {
+/*function randomStringExclude(array, excludeArray) {
   let chosen = null;
   while (chosen === null) {
     const randomIndex = randomIntegerInclusive(0, array.length - 1);
@@ -232,13 +290,16 @@ function randomStringExclude(array, excludeArray) {
     if (excludeArray.indexOf(candidate) === -1) chosen = candidate;
   }
   return chosen;
-}
+}*/
 
 function randomIndexExclude(array, excludeArray) {
   let chosen = null;
+  let iterations = 0;
   while (chosen === null) {
+    iterations++;
     const candidate = randomIntegerInclusive(0, array.length - 1);
     if (excludeArray.indexOf(candidate) === -1) chosen = candidate;
+    if (iterations > 100) { console.warn('max iterations', array); chosen = candidate; }
   }
   return chosen;
 }
@@ -321,7 +382,7 @@ function outputSchedule(schedule) {
 
     const todayCell = document.createElement('td');
     todayCell.classList.add('today');
-    // todayCell.textContent = `${item.today.title}`;
+    todayCell.textContent = `[${item.today.group}] ${item.today.lesson}`;
     tr.appendChild(todayCell);
 
     const transCell = document.createElement('td');
@@ -336,7 +397,7 @@ function outputSchedule(schedule) {
 
     const storyCell = document.createElement('td');
     storyCell.classList.add('story');
-    storyCell.textContent = `${item.story.slug} pt${item.story.part}`;
+    storyCell.textContent = `${item.story.slug}-${item.story.part}`;
     tr.appendChild(storyCell);
 
     const gdbyeCell = document.createElement('td');

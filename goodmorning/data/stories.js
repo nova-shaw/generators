@@ -1,11 +1,11 @@
 export const stories = [
-  { episodes: 10, title: `Don't Cry Dino`,     path: 'dont-cry-dino' },
-  { episodes: 9,  title: `A is for Apple`,     path: 'a-is-for-apple' },
-  { episodes: 10, title: `What Color is it`,   path: 'what-color-is-it' },
-  { episodes: 8,  title: `What Do You See?`,   path: 'what-do-you-see' },
-  { episodes: 5,  title: `Steve's Restaurant`, path: 'steves-restaurant' },
-  { episodes: 6,  title: `I See an Elephant`,  path: 'i-see-an-elephant' },
-  { episodes: 11, title: `Under the Sea`,      path: 'under-the-sea' },
-  { episodes: 11, title: `At the Park`,        path: 'at-the-park' },
-  { episodes: 10, title: `Hurry Up John`,      path: 'hurry-up-john' }
+  { parts: 10, title: `Don't Cry Dino`,     slug: 'dont-cry-dino' },
+  { parts: 9,  title: `A is for Apple`,     slug: 'a-is-for-apple' },
+  { parts: 10, title: `What Color is it`,   slug: 'what-color-is-it' },
+  { parts: 8,  title: `What Do You See?`,   slug: 'what-do-you-see' },
+  { parts: 5,  title: `Steve's Restaurant`, slug: 'steves-restaurant' },
+  { parts: 6,  title: `I See an Elephant`,  slug: 'i-see-an-elephant' },
+  { parts: 11, title: `Under the Sea`,      slug: 'under-the-sea' },
+  { parts: 11, title: `At the Park`,        slug: 'at-the-park' },
+  { parts: 10, title: `Hurry Up John`,      slug: 'hurry-up-john' }
 ]

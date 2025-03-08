@@ -16,8 +16,8 @@
       flex-direction: column;
       align-items: center;
       background: #eee;
-      --blue-bg: #96bfe4;
-      --blue-text: #669bcc;
+      --blue-bg: #777;
+      --blue-text: #444;
       --outline: #000;
     }
 
@@ -78,6 +78,11 @@
       background: var(--blue-bg);
       padding: 0.5em;
       margin: 0 0 1em 0;
+      overflow: hidden;
+    }
+
+    /* #btn_show_output { */
+    #toggle_output {
     }
 
     #output input {
@@ -88,6 +93,12 @@
       display: block;
       cursor: pointer;
       user-select: none;
+      background: #fff;
+      border: none;
+      border-radius: 0.25em;
+      line-height: 1.75;
+      padding: 0 0.5em;
+      float: right;
     }
 
     #output label::after {
@@ -110,6 +121,10 @@
       height: 20em;
       word-break: break-all;
       display: none;
+    }
+
+    #output input:checked + label {
+      margin-bottom: 0.5em;
     }
 
     #output input:checked + label::after {
@@ -150,6 +165,7 @@
     td {
       padding: 0 1em 0 0.25em;
       white-space: nowrap;
+      font-variant-numeric: tabular-nums;
     }
 
     tr.sunday {
@@ -163,7 +179,7 @@
 <body>
 
   <main>
-    <h1>Generator: Schedule for 'Good Morning'</h1>
+    <h1>Generator: LS 'Good Morning' Schedule</h1>
     
     <div id="controls">
       <div id="inputs">
@@ -174,15 +190,17 @@
         <label>
           <span>for</span>
           <input type="number" name="input_months" id="input_months" value="12" min="1" max="36">
+          <span>months</span>
         </label>
-        <span>months</span>
       </div>
       <button id="btn_generate">Generate</button>
     </div>
 
     <div id="output">
-      <input type="checkbox" name="show_output" id="show_output">
-      <label for="show_output" id="toggle_output">JSON Output</label>
+      <!-- <div id="btn_show_output"> -->
+        <input type="checkbox" name="show_output" id="show_output">
+        <label for="show_output" id="toggle_output">JSON</label>
+      <!-- </div> -->
       <textarea id="text_output" placeholder="JSON will output here"></textarea>
     </div>
 

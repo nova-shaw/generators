@@ -2,10 +2,13 @@
 # Fantastic Phonics schedule
 
 The current schedule generator is a Google Sheet, much like 'Good Morning'.
+
 It requires a multi-step, laborious process involving copy-pasting and manually keeping track of when certain parts were last used
+
 This must be done once a week on a Saturday to produce the schedule for the next week, starting Sunday.
-Find it in the 'kyodevteam' Google Drive under:
-My Drive > LiveKids > Fantastic Phonics
+
+Find it in the 'kyodevteam' Google Drive under:  
+My Drive > LiveKids > Fantastic Phonics > FP Media Randomizer
 
 
 v1 - Fantastic Phonics

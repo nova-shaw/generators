@@ -1,0 +1,117 @@
+﻿@import url(mmns-base.css);
+
+body {
+	scrollbar-base-color: lightskyblue;
+	scrollbar-3dlight-color: darkgray;
+	scrollbar-highlight-color: lightskyblue;
+	scrollbar-track-color: lightblue;
+	scrollbar-arrow-color: teal;
+	scrollbar-shadow-color: lightskyblue;
+	scrollbar-darkshadow-color: darkgray;
+}
+
+td.LessonNumber {
+	color: teal;
+}
+
+span.BoldPink {
+	color: teal;
+}
+
+span.RegularPink {
+	color: teal;
+}
+
+span.SmallPink {
+	color: teal;
+}
+
+div.LessonTopic {
+	background: lightblue;
+}
+.segueLink,
+.busSegueLink {
+	background: lightSeaGreen;
+}
+
+.segueLink:hover,
+.busSegueLink:hover {
+	background: white;
+}
+
+button.TopButton {
+	background: lightblue;
+	color: #222222;
+}
+
+button.TopButton:hover {
+	background-color: lightSeaGreen;
+	color: #FAFAFA;
+}
+
+button.LessonButton {
+	background: LightSkyBlue;
+}
+
+button.LessonButton:hover {
+	background: lightSeaGreen;
+}
+
+
+button.TextLink {
+	background: LightSkyBlue;
+}
+
+button.TextLink:hover {
+	background: lightSeaGreen;
+}
+
+button.BoldPink {
+	color: teal;
+	background: LightSkyBlue;
+}
+
+button.PointText {
+	background: LightSkyBlue;
+}
+
+span.PointText {
+	color: teal;
+	background: LightSkyBlue;
+}
+
+a.LessonLinksLinks {
+	color: teal;
+}
+
+
+a.LessonLinksCAT {
+	color: teal;
+}
+
+body.stay-put tfoot th {
+	background-color: azure;
+}
+
+input.text {
+	color: teal;
+}
+
+input.button {
+	color: teal;
+}
+
+hr.HR {
+	color: teal;
+}
+
+td.MenuItemCAT {
+	color: teal;}
+
+a.MenuLink {
+	color: teal;
+}
+
+a.MenuLinkCAT {
+	color: teal;
+}

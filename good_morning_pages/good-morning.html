@@ -5,155 +5,165 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Good Morning</title>
 
-  <link href="../../../cgi-bin/css/mmNS_Summer.css" rel="stylesheet" type="text/css" />
-  <script src="../../../cgi-bin/script.js" type="text/javascript"></script>
+  <link href="./css/mmNS_Summer.css" rel="stylesheet" type="text/css" />
+  <link href="./css/mmw8.css" rel="stylesheet" type="text/css" />
+  <link href="./css/kids.css" rel="stylesheet" type="text/css" />
 
-  <script src="../../../cgi-bin/KidsScript.js" type="text/javascript"></script>
-  <link href="../../../cgi-bin/css/mmw8.css" rel="stylesheet" type="text/css" />
-  <link href="../../../cgi-bin/css/kids.css" rel="stylesheet" type="text/css" />
-  <script src="../../../cgi-bin/KidsActivityGlossary.js" type="text/javascript"></script>
-  <script src="../../../cgi-bin/KidsPicsGlossary.js" type="text/javascript"></script>
+  <script src="./js/script.js" type="text/javascript"></script>
+  <!-- <script src="../../../cgi-bin/KidsScript.js" type="text/javascript"></script> -->
+  <!-- <script src="../../../cgi-bin/KidsActivityGlossary.js" type="text/javascript"></script> -->
+  <!-- <script src="../../../cgi-bin/KidsPicsGlossary.js" type="text/javascript"></script> -->
+
+  <!-- <script src="./good-morning.js" type="module"></script> -->
+  <script src="./good-morning.js" defer></script>
 
 </head>
-<body onunload="closeDisplay(); closeResources();">
 
-    <!--TOP DIV-->
-    <div class="top">
-      <div class="topmenu">
-        <!-- <button class="TopButton" onclick="location.href='goodMorning.htm'">Good Morning Menu</button> -->
-        <button class="TopButton" onclick="location.href='../livekids.htm'">Good Morning Menu</button>
-      </div>
-      <table class="Header" cellspacing="0">
-        <tr>
-          <td>
-            <table class="LessonNumber">
-              <tr>
-                <td class="LessonNumber">
-                  <!--########## LESSON NUMBER, update with same # as book. ##########-->
-                  Good Morning
-                </td>
-              </tr>
-            </table>
-          </td>
-          <td class="LessonTitle">
-            <!--########## LESSON TITLE, update each lesson. ##########-->
-            Tuesday
-          </td>
-        </tr>
-      </table>
+<!-- <body onunload="closeDisplay(); closeResources();"> -->
+<body>
+
+  <!--TOP DIV-->
+  <div class="top">
+    <div class="topmenu">
+      <button class="TopButton" onclick="location.href='goodMorning.htm'">Good Morning Menu</button>
     </div>
-    <!--END TOP DIV-->
+    <table class="Header" cellspacing="0">
+      <tbody><tr>
+        <td>
+          <table class="LessonNumber">
+            <tbody><tr>
+              <td class="LessonNumber">
+                <!--########## LESSON NUMBER, update with same # as book. ##########-->
+                Good Morning
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+        <td class="LessonTitle">
+          <!--########## LESSON TITLE, update each lesson. ##########-->
+          <span id="weekday">Tuesday</span>
+        </td>
+      </tr>
+    </tbody></table>
+  </div>
+  <!--END TOP DIV-->
 
-    <!----------START MIDDLE DIV---------->
-    <div class="middle">
+  <!----------START MIDDLE DIV---------->
+  <div class="middle">
 
-      <!--PRACTICE-->
-      <button onclick="showWaitingKinder();" class="busSegueLink">Kids Waiting Segue</button>
-      <button onclick="playVideo('../segueMedia/BasicOpening.mp4');" class="busSegueLink">Kids Opening</button>
-      <div class="Section">
-        <div class="PictureArea">
+    <!--PRACTICE-->
+    <button onclick="showWaitingKinder();" class="busSegueLink">Kids Waiting Segue</button>
+    <button onclick="playVideo('../segueMedia/BasicOpening.mp4');" class="busSegueLink">Kids Opening</button>
+    <div class="Section">
+      <div class="PictureArea">
 
+        <!-- <script>
+          templateBarn(window.GM_CONFIG.doorColor);
+        </script> -->
+        <!-- <img class="BigImageLink" src="../../media/liveKids/goodMorning/assets/house/Pink/house.jpg" onclick="playVideo('goodMorning/assets/house/Pink/house.mp4')"> -->
+        <img id="door-image" class="BigImageLink" src="" onclick="">
+        
+        <img class="MediumImageLink" src="../../media/liveKids/goodMorning/assets/backgrounds/living-room.jpg" onclick="loadImageBg(this.src)">
+        
+        <script>
+          templateHello(window.GM_CONFIG.hello);
+        </script><img class="BigImageLink" src="../../media/liveKids/goodMorning/Common/hello_song.jpg" onclick="playVideo('goodMorning/assets/hello-goodbye/hello-1.mp4')">
+
+
+        <img class="BigImageLink" src="../../media/liveKids/goodMorning/Common/What_Day_Is_It_Segue.jpg" onclick="showSrcMedia();">
+        <div class="pointBox">Days of the Week.<br><br>Open KIDS LESSON 2</div>
+
+
+        <div id="wheelGame"><table width="100%" cellspacing="0" cellpadding="3" style="margin-bottom: -1px;"><tbody><tr><td class="section7"><a name="ActivityDesc1ref"></a><div class="activity"><span class="link" onclick="resource('wheel',this.id)">Wheel</span> <img id="picActivityDesc1" src="../media/helpicon.gif" class="fakebutton" onclick="show(this, 'ActivityDesc1');" value="closed"><br><br><div style="text-align: center"><b>👆🏻 Please Note: Image display has been fixed 👆🏻</b></div><br><i>Note: Now works for up to 7 flashcards.</i><br><b>Aim:</b> The student has to use the word in a sentence or try to stop the wheel on the word suggested by the teacher</div></td><td class="section7" width="1%" style="text-align: center;"><div style="font-size: 8pt; font-weight: bold; text-align: center;"><img src="../media/time.gif"><br>2</div><br>&nbsp;</td></tr><tr><td colspan="2" class="section7"><div class="popup" id="ActivityDesc1"><table width="100%" style="background-color: #B3B3FF;"><tbody><tr style="border-bottom:2px;"><td style="vertical-align:bottom;"><b>Activity Instructions</b></td><td><div style="text-align: right; width: 100%; font-family: Webdings;"><span style="cursor: hand;" onclick="show(document.getElementById('picActivityDesc1'), 'ActivityDesc1')">r</span></div></td></tr></tbody></table><strong>Play the wheel of fortune</strong><br><br></div></td></tr></tbody></table></div>
+        <div id="shuffleGame"><table width="100%" cellspacing="0" cellpadding="3" style="margin-bottom: -1px;"><tbody><tr><td class="section7"><a name="ActivityDesc2ref"></a><div class="activity"><span class="link" onclick="resource('shuffle',this.id)">Shuffle</span> <img id="picActivityDesc2" src="../media/helpicon.gif" class="fakebutton" onclick="show(this, 'ActivityDesc2');" value="closed"><br><br><b>Aim:</b> The student has to memorize cards which are then shuffled</div></td><td class="section7" width="1%" style="text-align: center;"><div style="font-size: 8pt; font-weight: bold; text-align: center;"><img src="../media/time.gif"><br>2</div><br>&nbsp;</td></tr><tr><td colspan="2" class="section7"><div class="popup" id="ActivityDesc2"><table width="100%" style="background-color: #B3B3FF;"><tbody><tr style="border-bottom:2px;"><td style="vertical-align:bottom;"><b>Activity Instructions</b></td><td><div style="text-align: right; width: 100%; font-family: Webdings;"><span style="cursor: hand;" onclick="show(document.getElementById('picActivityDesc2'), 'ActivityDesc2')">r</span></div></td></tr></tbody></table><strong>If this is too dificult for the student(s) don't shuffle just use the show/hide feature as a memory game</strong><br><br><ol><li>Show cards to the students. Use the ask feature to help them memorize.</li><li>Press start to shuffle cards.</li><li>Use ask feature to quiz students on cards again.</li><li>Repeat with more cards/greater speed/more turns. You can of course make it easier if you need to.</li></ol></div></td></tr></tbody></table></div>
+        <div id="Flashcards"><table width="100%" cellspacing="0" cellpadding="3" style="margin-bottom: -1px;"><tbody><tr><td class="section7"><a name="ActivityDesc3ref"></a><div class="activity"><span class="link" onclick="resource('Kids-Flashcards',this.id)">Flashcards</span> <img id="picActivityDesc3" src="../media/helpicon.gif" class="fakebutton" onclick="show(this, 'ActivityDesc3');" value="closed"><br><strong>Let's practice today's language!<br></strong><br><strong>Aim:</strong> Present flashcards and practice saying the target language.<br></div></td><td class="section7" width="1%" style="text-align: center;"><div style="font-size: 8pt; font-weight: bold; text-align: center;"><img src="../media/time.gif"><br>2</div><br>&nbsp;</td></tr><tr><td colspan="2" class="section7"><div class="popup" id="ActivityDesc3"><table width="100%" style="background-color: #B3B3FF;"><tbody><tr style="border-bottom:2px;"><td style="vertical-align:bottom;"><b>Activity Instructions</b></td><td><div style="text-align: right; width: 100%; font-family: Webdings;"><span style="cursor: hand;" onclick="show(document.getElementById('picActivityDesc3'), 'ActivityDesc3')">r</span></div></td></tr></tbody></table>Show flashcards and elicit target language.  Use facial gestures and mime to help with meaning, if necessary. Have students repeat the words/phr</div></td></tr></tbody></table></div>
+        <div id="blankActivity"><table width="100%" cellspacing="0" cellpadding="3" style="margin-bottom: -1px;"><tbody><tr><td class="section7"><div class="activity"><span class="link" onclick="resource('BlankActivity',this.id)">Blank Activity</span><br><br>This is not a real activity, but it resets the screen for non-kids images.<br></div></td><td class="section7" width="1%" style="text-align: center;"><div style="font-size: 8pt; font-weight: bold; text-align: center;"><img src="../media/time.gif"><br>2</div><br>&nbsp;</td></tr></tbody></table></div>
+
+        <script type="text/javascript">
+          var picPath = '../../media/liveKids/goodMorning/Common/';
+          var les_number = 'GMTuesday_TEST';
+
+          var picArray = new Array(
+            'monday',
+            'tuesday',
+            'wednesday',
+            'thursday',
+            'friday',
+            'saturday',
+            'sunday'
+          );
+
+          var descriptionArray = new Array(
+            'monday',
+            'tuesday',
+            'wednesday',
+            'thursday',
+            'friday',
+            'saturday',
+            'sunday'
+          );
+
+          var wheelGame = load('Wheel', null, 2, 7, null, null, true);
+          //alert(wheelGame);
+
+          document.getElementById('wheelGame').innerHTML = wheelGame;
+
+          var shuffleGame = load('Shuffle', null, 2, 7, null, null, true);
+          document.getElementById('shuffleGame').innerHTML = shuffleGame;
+
+          var flashcards = load('Flashcards', null, 2, 7, null, null, true);
+          document.getElementById('Flashcards').innerHTML = flashcards;
+
+          var blankactivity = load('Blank Activity', null, 2, 7, null, null, true);
+          document.getElementById('blankActivity').innerHTML = blankactivity;
+
+        </script>
+
+
+        <img class="BigImageLink" src="../../media/liveKids/goodMorning/Common/Lets_Exercise_Segue.jpg" onclick="showSrcMedia();">
+        <div id="Exercise">
           <script>
-            templateBarn(window.GM_CONFIG.doorColor);
-          </script>
-          <img class="MediumImageLink" src="../../media/liveKids/goodMorning/assets/backgrounds/living-room.jpg" onclick="loadImageBg(this.src)"/>
-          <script>
-            templateHello(window.GM_CONFIG.hello);
-          </script>
-
-
-          <img class="BigImageLink" src="../../media/liveKids/goodMorning/Common/What_Day_Is_It_Segue.jpg" onclick="showSrcMedia();" />
-          <div class="pointBox">Days of the Week.<br /><br />Open KIDS LESSON 2</div>
-
-
-          <div id="wheelGame"></div>
-          <div id="shuffleGame"></div>
-          <div id="Flashcards"></div>
-          <div id="blankActivity"></div>
-
-          <script type="text/javascript">
-            var picPath = '../../media/liveKids/goodMorning/Common/';
-            var les_number = 'GMTuesday_TEST';
-
-            var picArray = new Array(
-              'monday',
-              'tuesday',
-              'wednesday',
-              'thursday',
-              'friday',
-              'saturday',
-              'sunday'
-            );
-
-            var descriptionArray = new Array(
-              'monday',
-              'tuesday',
-              'wednesday',
-              'thursday',
-              'friday',
-              'saturday',
-              'sunday'
-            );
-
-            var wheelGame = load('Wheel', null, 2, 7, null, null, true);
-            //alert(wheelGame);
-
-            document.getElementById('wheelGame').innerHTML = wheelGame;
-
-            var shuffleGame = load('Shuffle', null, 2, 7, null, null, true);
-            document.getElementById('shuffleGame').innerHTML = shuffleGame;
-
-            var flashcards = load('Flashcards', null, 2, 7, null, null, true);
-            document.getElementById('Flashcards').innerHTML = flashcards;
-
-            var blankactivity = load('Blank Activity', null, 2, 7, null, null, true);
-            document.getElementById('blankActivity').innerHTML = blankactivity;
-
-          </script>
-
-
-          <img class="BigImageLink" src="../../media/liveKids/goodMorning/Common/Lets_Exercise_Segue.jpg" onclick="showSrcMedia();" />
-          <div id="Exercise">
-            <script>
-              templateUsagiExercise(GM_CONFIG.usagiExercise);
-            </script>
-          </div>
-
-          <script>
-            templateWindow(GM_CONFIG.window);
-          </script>
-
-
-          <div id="TodaysLesson"></div>
-          <script type="text/javascript">
-            document.getElementById('TodaysLesson').innerHTML = GenerateTodaysLesson();
-          </script>
-
-          <script>
-            templateTransition(GM_CONFIG.transition);
-          </script>
-
-          <img class="MediumImageLink" src="../../media/liveKids/goodMorning/assets/backgrounds/living-room.jpg" onclick="loadImageBg(this.src)"/>
-
-          <script>
-            templateTime(GM_CONFIG.time);
-            templateStory(GM_CONFIG.story);
-            templateGoodbye(GM_CONFIG.goodbye)
-          </script>
-
+            templateUsagiExercise(GM_CONFIG.usagiExercise);
+          </script><img class="BigImageLink" src="../../media/liveKids/goodMorning/assets/usagi/Situps/usagi-SU08.jpg" onclick="playVideo('goodMorning/assets/usagi/Situps/usagi-SU08.mp4')">
         </div>
 
+        <script>
+          templateWindow(GM_CONFIG.window);
+        </script><img class="BigImageLink" src="../../media/liveKids/goodMorning/assets/window/Square/window.jpg" onclick="playVideo('goodMorning/assets/window/Square/window.mp4')">
 
-        <button onclick="playVideo('../segueMedia/kidsclosing.mp4');" class="busSegueLink">Kids Closing</button>
-        <button onclick="showWaitingKinder();" class="busSegueLink">Kids Waiting Segue</button>
 
+        <div id="TodaysLesson"></div>
+        <script type="text/javascript">
+          document.getElementById('TodaysLesson').innerHTML = GenerateTodaysLesson();
+        </script><img class="MediumImageLink" src="../../media/liveKids/goodMorning/assets/backgrounds/question-room.jpg" onclick="loadImageBg(this.src);"><img class="MediumImageLink" src="../../media/liveKids/goodMorning/assets/backgrounds/fruit-room.jpg" onclick="loadVideoBg('../../media/liveKids/goodMorning/assets/backgrounds/fruit-room.mp4');"><img class="BigImageLink" src="../../media/liveKids/goodMorning/Common/ILikeFruit.jpg" onclick="javascript:loadMedia('goodMorning/Common/ILikeFruit.jpg')"><img class="MediumImageLink" src="../../media/liveKids/goodMorning/assets/backgrounds/like-room.jpg" onclick="loadImageBg(this.src);"><img class="MediumImageLink" src="../../media/liveKids/goodMorning/Common/apples.jpg" onclick="javascript:loadMedia('goodMorning/Common/apples.jpg')"><img class="MediumImageLink" src="../../media/liveKids/goodMorning/Common/bananas.jpg" onclick="javascript:loadMedia('goodMorning/Common/bananas.jpg')"><img class="MediumImageLink" src="../../media/liveKids/goodMorning/Common/cherries.jpg" onclick="javascript:loadMedia('goodMorning/Common/cherries.jpg')"><img class="MediumImageLink" src="../../media/liveKids/goodMorning/Common/pineapple.jpg" onclick="javascript:loadMedia('goodMorning/Common/pineapple.jpg')"><img class="MediumImageLink" src="../../media/liveKids/goodMorning/Common/strawberries.jpg" onclick="javascript:loadMedia('goodMorning/Common/strawberries.jpg')">
+
+        <script>
+          templateTransition(GM_CONFIG.transition);
+        </script><img class="BigImageLink" src="../../media/liveKids/goodMorning/assets/animal-transition/ppm/animals.jpg" onclick="playVideo('goodMorning/assets/animal-transition/ppm/animals.mp4')">
+
+        <img class="MediumImageLink" src="../../media/liveKids/goodMorning/assets/backgrounds/living-room.jpg" onclick="loadImageBg(this.src)">
+
+        <script>
+          templateTime(GM_CONFIG.time);
+          templateStory(GM_CONFIG.story);
+          templateGoodbye(GM_CONFIG.goodbye)
+        </script><img class="BigImageLink" src="../../media/liveKids/goodMorning/Common/What_Time_Is_It.jpg" onclick="showSrcMedia();"><p>↓↓↓ Now with animation! ↓↓↓<br>Please see usage instructions in resource window</p><img class="BigImageLink" src="../../media/liveKids/goodMorning/assets/clock/clock-500.jpg" onclick="resource('good-morning-clock', this.id)"><img class="BigImageLink" src="../../media/liveKids/goodMorning/Common/story_time.jpg" onclick="playVideo('goodMorning/assets/story/under-the-sea/under-the-sea-03.mp4')"><img class="BigImageLink" src="../../media/liveKids/goodMorning/Common/goodbye_song.jpg" onclick="playVideo('goodMorning/assets/hello-goodbye/goodbye-1.mp4')">
 
       </div>
-      <!-- END OF PRACTICE -->
 
-      <!-- END MIDDLE DIV -->
+
+      <button onclick="playVideo('../segueMedia/kidsclosing.mp4');" class="busSegueLink">Kids Closing</button>
+      <button onclick="showWaitingKinder();" class="busSegueLink">Kids Waiting Segue</button>
+
 
     </div>
+    <!-- END OF PRACTICE -->
 
-</body>
-</html>
+    <!-- END MIDDLE DIV -->
+
+  </div>
+
+
+
+
+</body></html>

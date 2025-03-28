@@ -1,0 +1,223 @@
+@import 'material-icons.css';
+
+.button {
+	width: 50px;
+}
+
+.racebutton {
+	width: 100px;
+	height: 50px;
+	background: rgb(255, 255, 255);
+	border: 2px solid rgb(0, 150, 150);
+	color: rgb(0, 0, 150);
+	font-family: Arial;
+	font-size: 16pt;
+}
+
+.racebuttonbig {
+	width: 200px;
+	height: 30px;
+	background: rgb(255, 255, 255);
+	border: 2px solid rgb(150, 255, 255);
+	color: rgb(0, 0, 150);
+	font-family: Arial;
+	font-size: 16pt;
+}
+
+.racebuttonred {
+	width: 100px;
+	height: 50px;
+	background: rgb(255, 255, 255);
+	border: 2px solid rgb(150, 50, 100);
+	color: rgb(0, 0, 150);
+	font-family: Arial;
+	font-size: 16pt;
+}
+
+.h {
+	color: #282828;
+}
+
+.resourceheader {
+	font-size: 14pt;
+}
+
+div.menu {
+	left: -130px;
+	width: 145px;
+	padding: 2px;
+	top: 43px;
+	position: absolute;
+}
+
+div.popup {
+	margin-left: auto;
+	margin-right: auto;
+	top: 0px;
+	left: 0px;
+	/*modified to fix chinese kids*/
+	width: 90%;
+	border-left: 1px solid #808080;
+	border-top: 1px solid #808080;
+	border: 1px solid #808080;
+	border-right: 2px solid #000000;
+	border-bottom: 2px solid #000000;
+	padding: 3px;
+	text-align: left;
+	display: none;
+	position: relative;
+	background: #fafafa;
+}
+
+div.popupNKWcat {
+	margin: 0px;
+	top: 210px;
+	left: 125px;
+	width: 100px;
+	border-left: 1px solid #808080;
+	border-top: 1px solid #808080;
+	border: 1px solid #808080;
+	border-right: 2px solid #000000;
+	border-bottom: 2px solid #000000;
+	text-align: left;
+	display: none;
+	position: absolute;
+	background: #fafafa;
+}
+
+div.popupNKWcat2 {
+	margin: 0px;
+	top: 160px;
+	left: 125px;
+	width: 100px;
+	border-left: 1px solid #808080;
+	border-top: 1px solid #808080;
+	border: 1px solid #808080;
+	border-right: 2px solid #000000;
+	border-bottom: 2px solid #000000;
+	text-align: left;
+	display: none;
+	position: absolute;
+	background: #fafafa;
+}
+
+img.fakebutton {
+	cursor: hand;
+}
+
+span.activity {
+	font-weight: bold;
+}
+
+span.b {
+	font-weight: bold;
+	font-style: italic;
+	color: #000000;
+}
+
+span.deadlink {
+	font-size: 14pt;
+	font-weight: bold;
+	color: #000000;
+}
+
+span.i {
+	font-weight: bold;
+	display: inline;
+	color: #000000;
+}
+
+span.link {
+	font-size: 14pt;
+}
+
+span.link[onclick="resource('NKWAllBasicQuestions')"] {
+	font-size: 12pt;
+}
+
+span.s {
+	font-style: italic;
+	color: #000000;
+}
+
+span.webding {
+	font-size: 18pt;
+	color: #000000;
+}
+
+td {
+	vertical-align: top;
+}
+
+span.status {
+	margin-top: -10px;
+}
+
+.correct-answer {
+	color: #FA0000;
+}
+
+.correct-answer::after {
+	/* ⭕ Heavy Large Circle Emoji */
+	content: '\2B55';
+}
+
+.incorrect-answer {
+	color: #0000FA;
+}
+
+.incorrect-answer::after {
+	/* ❌ Cross Mark Emoji */
+	content: '\274C';
+}
+
+td.headerbox {
+	height: 54px;
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: bold;
+}
+
+.PDFLinks {
+	padding-left: 5px;
+	background-color: #C9EFEE;
+}
+
+div.video-activity td,
+div.random-activity td {
+	background: none;
+}
+
+div.video-activity .activity,
+div.random-activity .activity {
+	padding: 25px;
+	background: none;
+	text-align: center;
+	position: relative;
+}
+
+div.video-activity,
+div.random-activity {
+	background: #6db6ff;
+	position: relative;
+	text-align: center;
+	margin-bottom: 10px;
+	border-radius: 10px;
+}
+
+div.video-activity span.link,
+div.random-activity span.link {
+	position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    vertical-align: middle;
+	color: white;
+}
+
+div.activity-instructions {
+	padding: 10px;
+}

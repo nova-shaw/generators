@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schedule</title>
+</head>
+<body>
+
+  <main>
+  </main>
+
+  <script>
+    const log = console.log;
+
+    let lessonDuration = 40;
+    let breakDuration = 10;
+
+    const time = new Date('2025-04-03 00:20');
+    const end  = new Date('2025-04-04 00:00');
+
+    const schedule = []; // Will hold all the times
+
+    let isLesson = true;
+
+    while( time < end ) {
+
+      const block = {
+        type: null,
+        length: lessonDuration,
+        start: null,
+        end: null
+      };
+
+      if (!isLesson) {
+        log(time.getHours(), time.getMinutes())
+        // When the 14:30 lesson ends at 15:10, there is a 20 MINUTE BREAK for some godforsaken reason
+        block.length = (time.getHours() == 15 && time.getMinutes() == 10) ? 20 : 10;
+      }
+
+      block.type = (isLesson) ? 'lesson' : 'break';
+
+      block.start = formatTime(time);
+      time.setTime( time.getTime() + minToMillis(block.length) );
+      block.end = formatTime(time);
+      schedule.push(block);
+      
+      isLesson = !isLesson; // Flip between true and false
+    }
+
+    log(schedule);
+
+    function formatTime(dateObj) {
+      const hours = String( dateObj.getHours()   ).padStart(2, '0');
+      const min   = String( dateObj.getMinutes() ).padStart(2, '0');
+      return `${hours}:${min}`;
+    }
+
+    function minToMillis(min) {
+      return min * 60 * 1000;
+    }
+
+
+  </script>
+</body>
+</html>

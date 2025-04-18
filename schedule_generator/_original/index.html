@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schedule</title>
+
+  <style>
+    body {
+      font-family: -system-ui, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Helvetica, Arial, apple color emoji, segoe ui emoji, segoe ui symbol, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 1em;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25em;
+    }
+
+    li {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5em;
+    }
+
+    li span {
+      display: inline-block;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .time {
+      width: 3em;
+      text-align: right;
+    }
+
+    .min10 { background-color: #ff0; }
+    .min20 { background-color: #fac; }
+    .min40 { background-color: #0fb; }
+  </style>
+</head>
+<body>
+
+  <ul id="schedule"></ul>
+
+  <script>
+    const log = console.log;
+
+
+    ////////////////////////////// Begin exact copy of current code in StartOnline 2025-04-15
+
+    var schedule = new Array();
+
+    schedule.push("0:40"); // start
+    schedule.push("1:20");
+    schedule.push("1:30");
+    schedule.push("2:10");
+    schedule.push("2:20");
+    schedule.push("3:00");
+    schedule.push("3:40");
+    schedule.push("4:20");
+    schedule.push("4:30");
+    schedule.push("5:10");
+    schedule.push("5:20");
+    schedule.push("6:00");
+    schedule.push("6:10");
+    schedule.push("6:50");
+    schedule.push("7:00");
+    schedule.push("7:40");
+    schedule.push("7:50");
+    schedule.push("8:30");
+    schedule.push("8:40");
+    schedule.push("9:20");
+    schedule.push("9:30");
+    schedule.push("10:10");
+    schedule.push("10:20");
+    schedule.push("11:00");
+    schedule.push("11:10");
+    schedule.push("11:50");
+    schedule.push("12:00");
+    schedule.push("12:40");
+    schedule.push("12:50");
+    schedule.push("13:30");
+    schedule.push("13:40");
+    schedule.push("14:20");
+    schedule.push("14:30");
+    schedule.push("15:10"); // 20 minute interval
+    schedule.push("15:30");
+    schedule.push("16:10");
+    schedule.push("16:20");
+    schedule.push("17:00");
+    schedule.push("17:10");
+    schedule.push("17:50");
+    schedule.push("18:00");
+    schedule.push("18:40");
+    schedule.push("18:50");
+    schedule.push("19:30");
+    schedule.push("19:40");
+    schedule.push("20:20");
+    schedule.push("20:30");
+    schedule.push("21:10");
+    schedule.push("21:20");
+    schedule.push("22:00");
+    schedule.push("22:10");
+    schedule.push("22:50");
+    schedule.push("23:00");
+    schedule.push("23:40");
+    schedule.push("23:50");
+    schedule.push("0:30");
+
+    ////////////////////////////// End exact copy
+
+    const scheduleUl = document.querySelector('ul#schedule');
+
+    let prevTime = null;
+
+    schedule.forEach( timeString => {
+
+      const li = document.createElement('li');
+      const timeSpan = document.createElement('span');
+      timeSpan.classList.add('time');
+      timeSpan.innerText = timeString;
+      li.appendChild(timeSpan);
+
+      if (prevTime != null) {
+        const prevTimeObj = new Date();
+        setTimeFromString(prevTimeObj, prevTime);
+        // log(prevTimeObj);
+
+        const thisTimeObj = new Date();
+        setTimeFromString(thisTimeObj, timeString);
+        // log(thisTimeObj);
+
+        // log(thisTimeObj, prevTimeObj);
+        // log(thisTimeObj.getTime() - prevTimeObj.getTime());
+        // log(thisTimeObj - prevTimeObj);
+        const msDelta = thisTimeObj.getTime() - prevTimeObj.getTime();
+        const minDelta = millisToMin(msDelta);
+        // log(millisToMin(msDelta));
+
+        const deltaSpan = document.createElement('span');
+        deltaSpan.innerText = ` +${minDelta}min`;
+        deltaSpan.classList.add(`min${minDelta}`);
+
+        li.appendChild(deltaSpan);
+      }
+
+      prevTime = timeString;
+
+      scheduleUl.appendChild(li);
+
+    });
+
+
+    function setTimeFromString(dateObj, timeString) {
+      const timeParts = timeString.split(':');
+      dateObj.setHours(timeParts[0]);
+      dateObj.setMinutes(timeParts[1]);
+      dateObj.setSeconds('00');
+      dateObj.setMilliseconds('00');
+      // return dateObj;
+    }
+
+    function millisToMin(ms) {
+      return ms / 1000 / 60;
+    }
+
+  </script>
+</body>
+</html>

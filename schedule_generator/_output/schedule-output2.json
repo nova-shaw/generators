@@ -1,4 +1,5 @@
 [
+  { "type": "break",  "length": 10, "start": "06:00", "end": "06:10" },
   { "type": "lesson", "length": 40, "start": "06:10", "end": "06:50" },
   { "type": "break",  "length": 10, "start": "06:50", "end": "07:00" },
   { "type": "lesson", "length": 40, "start": "07:00", "end": "07:40" },
@@ -41,5 +42,5 @@
   { "type": "break",  "length": 10, "start": "22:50", "end": "23:00" },
   { "type": "lesson", "length": 40, "start": "23:00", "end": "23:40" },
 
-  { "type": "NOTHING", "start": "23:40", "end": "06:10" }
+  { "type": "NOTHING", "start": "23:40", "end": "06:00" }
 ]

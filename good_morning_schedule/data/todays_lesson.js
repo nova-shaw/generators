@@ -1,74 +1,74 @@
 export const todays_lesson = [
-  { group: `HowRU`, choices: [
-    `HowAreYou`,
-    `HowOldAreYou`,
-    `WhensYourBirthday`
+  { group: 'basics', choices: [ // was 'HowRU'
+    'how-are-you',
+    'how-old-are-you',
+    'whens-your-birthday'
   ]},
-  { group: `Weather`, choices: [
-    `HowsTheWeather-Fukuoka`,
-    `HowsTheWeather-Kanazawa`,
-    `HowsTheWeather-Shizuoka`
+  { group: 'weather', choices: [ // was 'Weather'
+    'fukuoka',
+    'kanazawa',
+    'shizuoka'
   ]},
-  { group: `Like`, choices: [
-    `ILikeActions`,
-    `ILikeAnimals`,
-    `ILikeColors`,
-    `ILikeFamily`,
-    `ILikefood`,
-    `ILikefruit`
+  { group: 'like', choices: [ // 'Like'
+    'actions',
+    'animals',
+    'colors',
+    'family',
+    'food',
+    'fruit'
   ]},
-  { group: `LetsSing`, choices: [
-    `lets-sing-head-shoulders`,
-    `lets-sing-head-shoulders-2`,
-    `lets-sing-hokey-pokey`,
-    `lets-sing-hokey-pokey-2`,
-    `lets-sing-if-you-re-happy`,
-    `lets-sing-if-you-re-happy-2`
+  { group: 'lets-sing', choices: [ // was 'LetsSing'
+    'head-shoulders',
+    'head-shoulders-2',
+    'hokey-pokey',
+    'hokey-pokey-2',
+    'if-youre-happy',
+    'if-youre-happy-2'
   ]},
-  { group: `NumberThief`, choices: [
-    `NumberThief - 01`,
-    `NumberThief - 02`,
-    `NumberThief - 03`,
-    `NumberThief - 04`,
-    `NumberThief - 05`,
-    `NumberThief - 06`,
-    `NumberThief - 07`,
-    `NumberThief - 08`,
-    `NumberThief - 09`
+  { group: 'number-thief', choices: [ // was 'NumberThief'
+    'number-thief-01',
+    'number-thief-02',
+    'number-thief-03',
+    'number-thief-04',
+    'number-thief-05',
+    'number-thief-06',
+    'number-thief-07',
+    'number-thief-08',
+    'number-thief-09'
   ]},
-  { group: `NurseryRhymes`, choices: [
-    `NurseryRhymes - Grand Old Duke Of York`,
-    `NurseryRhymes - Hickory Dickory`,
-    `NurseryRhymes - Humpty Dumpty`,
-    `NurseryRhymes - Itsy Bitsy Spider`
+  { group: 'nursery-rhymes', choices: [ // was 'NurseryRhymes'
+    'grand-old-duke-of-york',
+    'hickory-dickory',
+    'humpty-dumpty',
+    'itsy-bitsy-spider'
   ]},
-  { group: `Science`, choices: [
-    `Science-Colors - green`,
-    `Science-FloatOrSink - block`,
-    `Science-FloatOrSink - button`,
-    `Science-FloatOrSink - coin`,
-    `Science-FloatOrSink - golfball`,
-    `Science-FloatOrSink - key`,
-    `Science-FloatOrSink - orange`,
-    `Science-FloatOrSink - safetypin`,
-    `Science-FloatOrSink - spanner`,
-    `Science-FloatOrSink - tennisball`,
-    `Science-FloatOrSink - toothbrush`,
-    `Science-WhatIsIt - bicycle`,
-    `Science-WhatIsIt - calculator`,
-    `Science-WhatIsIt - dinosaur`,
-    `Science-WhatIsIt - jumprope`,
-    `Science-WhatIsIt - key`,
-    `Science-WhatIsIt - moneybox`,
-    `Science-WhatIsIt - onion`,
-    `Science-WhatIsIt - pianica`,
-    `Science-WhatIsIt - sponge`,
-    `Science-WhatIsIt - sunflower`,
-    `Science-WhatIsIt - tennisracket`,
-    `Science-WhatIsIt - trumpet`
+  { group: 'science', choices: [ // was 'Science'
+    'colors-green',
+    'float-sink-block',
+    'float-sink-button',
+    'float-sink-coin',
+    'float-sink-golfball',
+    'float-sink-key',
+    'float-sink-orange',
+    'float-sink-safetypin',
+    'float-sink-spanner',
+    'float-sink-tennisball',
+    'float-sink-toothbrush',
+    'what-is-it-bicycle',
+    'what-is-it-calculator',
+    'what-is-it-dinosaur',
+    'what-is-it-jumprope',
+    'what-is-it-key',
+    'what-is-it-moneybox',
+    'what-is-it-onion',
+    'what-is-it-pianica',
+    'what-is-it-sponge',
+    'what-is-it-sunflower',
+    'what-is-it-tennisracket',
+    'what-is-it-trumpet'
   ]},
-  { group: `LetterThief`, choices: [
-    `LetterThief - H`,
-    `LetterThief - S`
+  { group: 'letter-thief', choices: [ // was 'LetterThief'
+    'letter-thief-h',
+    'letter-thief-s'
   ]}
 ]

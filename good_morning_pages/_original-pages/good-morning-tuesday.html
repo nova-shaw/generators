@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Good Morning</title>
+	<link href="../../../cgi-bin/css/mmNS_Summer.css" rel="stylesheet" type="text/css" />
+	<script src="../../../cgi-bin/script.js" type="text/javascript"></script>
+
+	<script src="../../../cgi-bin/KidsScript.js" type="text/javascript"></script>
+	<link href="../../../cgi-bin/css/mmw8.css" rel="stylesheet" type="text/css" />
+	<link href="../../../cgi-bin/css/kids.css" rel="stylesheet" type="text/css" />
+	<script src="../../../cgi-bin/KidsActivityGlossary.js" type="text/javascript"></script>
+	<script src="../../../cgi-bin/KidsPicsGlossary.js" type="text/javascript"></script>
+
+	<script src="./js/templates.js" type="text/javascript"></script>
+	<script src="./js/config/init-media.js" type="text/javascript"></script>
+	<script>
+		window.GM_CONFIG = initMedia(1);
+		templateTodaysLesson(GM_CONFIG.todaysLesson);
+	</script>
+</head>
+
+<body onunload="closeDisplay(); closeResources();">
+	<!--TOP DIV-->
+	<div class="top">
+		<div class="topmenu">
+			<button class="TopButton" onclick="location.href='goodMorning.htm'">Good Morning Menu</button>
+		</div>
+		<table class="Header" cellspacing="0">
+			<tr>
+				<td>
+					<table class="LessonNumber">
+						<tr>
+							<td class="LessonNumber">
+								<!--########## LESSON NUMBER, update with same # as book. ##########-->
+								Good Morning
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td class="LessonTitle">
+					<!--########## LESSON TITLE, update each lesson. ##########-->
+					Tuesday
+				</td>
+			</tr>
+		</table>
+	</div>
+	<!--END TOP DIV-->
+
+	<!----------START MIDDLE DIV---------->
+	<div class="middle">
+
+		<!--PRACTICE-->
+		<button onclick="showWaitingKinder();" class="busSegueLink">Kids Waiting Segue</button>
+		<button onclick="playVideo('../segueMedia/BasicOpening.mp4');" class="busSegueLink">Kids Opening</button>
+		<div class="Section">
+			<div class="PictureArea">
+
+				<script>
+					templateBarn(window.GM_CONFIG.doorColor);
+				</script>
+				<img class="MediumImageLink" src="../../media/liveKids/goodMorning/assets/backgrounds/living-room.jpg" onclick="loadImageBg(this.src)"/>
+				<script>
+					templateHello(window.GM_CONFIG.hello);
+				</script>
+
+
+				<img class="BigImageLink" src="../../media/liveKids/goodMorning/Common/What_Day_Is_It_Segue.jpg" onclick="showSrcMedia();" />
+				<div class="pointBox">Days of the Week.<br /><br />Open KIDS LESSON 2</div>
+
+
+				<div id="wheelGame"></div>
+				<div id="shuffleGame"></div>
+				<div id="Flashcards"></div>
+				<div id="blankActivity"></div>
+
+				<script type="text/javascript">
+					var picPath = '../../media/liveKids/goodMorning/Common/';
+					var les_number = 'GMTuesday_TEST';
+
+					var picArray = new Array(
+						'monday',
+						'tuesday',
+						'wednesday',
+						'thursday',
+						'friday',
+						'saturday',
+						'sunday'
+					);
+
+					var descriptionArray = new Array(
+						'monday',
+						'tuesday',
+						'wednesday',
+						'thursday',
+						'friday',
+						'saturday',
+						'sunday'
+					);
+
+					var wheelGame = load('Wheel', null, 2, 7, null, null, true);
+					//alert(wheelGame);
+
+					document.getElementById('wheelGame').innerHTML = wheelGame;
+
+					var shuffleGame = load('Shuffle', null, 2, 7, null, null, true);
+					document.getElementById('shuffleGame').innerHTML = shuffleGame;
+
+					var flashcards = load('Flashcards', null, 2, 7, null, null, true);
+					document.getElementById('Flashcards').innerHTML = flashcards;
+
+					var blankactivity = load('Blank Activity', null, 2, 7, null, null, true);
+					document.getElementById('blankActivity').innerHTML = blankactivity;
+
+				</script>
+
+
+				<img class="BigImageLink" src="../../media/liveKids/goodMorning/Common/Lets_Exercise_Segue.jpg" onclick="showSrcMedia();" />
+				<div id="Exercise">
+					<script>
+						templateUsagiExercise(GM_CONFIG.usagiExercise);
+					</script>
+				</div>
+
+				<script>
+					templateWindow(GM_CONFIG.window);
+				</script>
+
+
+				<div id="TodaysLesson"></div>
+				<script type="text/javascript">
+					document.getElementById('TodaysLesson').innerHTML = GenerateTodaysLesson();
+				</script>
+
+				<script>
+					templateTransition(GM_CONFIG.transition);
+				</script>
+
+				<img class="MediumImageLink" src="../../media/liveKids/goodMorning/assets/backgrounds/living-room.jpg" onclick="loadImageBg(this.src)"/>
+
+				<script>
+					templateTime(GM_CONFIG.time);
+					templateStory(GM_CONFIG.story);
+					templateGoodbye(GM_CONFIG.goodbye)
+				</script>
+
+			</div>
+
+
+			<button onclick="playVideo('../segueMedia/kidsclosing.mp4');" class="busSegueLink">Kids Closing</button>
+			<button onclick="showWaitingKinder();" class="busSegueLink">Kids Waiting Segue</button>
+
+
+		</div>
+		<!-- END OF PRACTICE -->
+
+		<!-- END MIDDLE DIV -->
+
+	</div>
+
+</body>
+
+</html>
